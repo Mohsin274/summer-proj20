@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-deferred@1"></script>
 </head>
 <body>
+    
     <div class="cover">
         <img src="images/cover-img1.png" style="top: 0; left: 0; width: 25%;">
         <img src="images/cover-img2.png" style="right: 0; width: 15%;">
@@ -20,9 +21,10 @@
     <nav id="nav" class="nav"><p>Unemployment in Assam</p>
         <div class="nav-btn-grp">
             <button href="#" onclick="dropDown()" class="dropdown-btn">Groups</button>
+        
             <button href="#" onclick="sideBar()" class="int-btn"><i class="icon-tc ic-list-w"></i> Content table</button>
         </div>
-        <button href="#" onclick="sideBar()" class="int-btn"><i class="icon-tc ic-list-w"></i></button>
+        <button href="#" onclick="sideBar()" class="int-btn"><i class="icon-tc ic-menu-w" style="width: 2;"></i></button>
         <div id="dropDown" class="dropdown">
             <div>
                 <h2>Illegal immigration in Assam</h2>
@@ -47,9 +49,14 @@
             <button onclick="window.location.href='#sec2';" class="int-btn"><i class="icon-tc ic-down-arr-w"></i> Continue reading</button>
         </div>        
     </div>
+    <div id="sticky" class="sticky-btn">
+        <button href="#" onclick="sideBar()" class="int-btn"><i class="icon-tc ic-list-w"></i> Content table</button>
+        <a href="#" class="int-btn"><i class="icon-tc ic-up-arr-w"></i></a>
+    </div>
     <div class="main">
         <!-- <div class="float" -->
         <a id="fbtn" href="#" class="float-btn"><span class="label">Back to Top</span><i class="icon-tc ic-up-arr"></i></a>
+        
         <!-- <div id="fbtn" class="float-grp">
             <a href="javascript:void(0)" onclick="sideBar()" class="float-btn"><span class="label">Content Table</span><i class="icon-tc ic-list"></i></a>
             <a  href="#"  class="float-btn"><span class="label">Back to Top</span><i class="icon-tc ic-up-arr"></i></a>
@@ -266,7 +273,7 @@
         <p>The population censuses, different quinquennial rounds of National sample Survey on employment data, Employment and Unemployment Surveys conducted by the Labour Bureau and Economic Census provides data on employment structure and workforce as well as involvement of human resources in economic activity, employment etc. On the other hand, the data available from the Employment Exchanges does not give a clear picture on unemployment as a large number of unemployed people either did not register their names with Employment Exchanges or those who secure employment through other channels do not delete their names from the records of Employment Exchanges.</p>
         <p>The Census of India collects information on economic activity of an individual and classifies workers into two groups namely, Main workers and Marginal workers. Main workers are those who had worked for the major part of the reference period i.e. six months or more and Marginal workers are those who had worked less than six months. The following table shows the trend of Main workers, Marginal workers and Non-workers in Assam according to the last three censuses.</p>
         <h4 class="t-head">Distribution of total workers, main workers, marginal workers and non-workers in Assam</h4>
-        <p class="scr-tip">Scroll <i class="icon-tc ic-up-arr"></i></p>
+        <p class="scr-tip">Swipe <i class="icon-tc ic-right-arr"></i></p>
         <div style="overflow-x:auto;">
             <table class="cm-table">
                 <tbody>
@@ -328,7 +335,7 @@
         <h3 id="">Labour Force Participation Rate</h3>
         <p>The result of the Fifth Annual Employment Unemployment Survey, 2015-16 conducted by the Labour Bureau reveals that the Labour Force Participation rate in respect of the age-group 15 years and above according to usual status approach for both principal status (ps) and subsidiary status (ss) in Assam is 53 percent in rural areas, 50 percent in urban areas and 53 percent taking urban and rural areas as a whole against the all India rate of 56 percent, 44 percent and 52 percent respectively. The figure given below shows the Labour Force Participation Rate (per 1000) for persons aged 15 years and above in the State. </p>
         <h4 class="t-head">Employment in Shops and Commercial establishments in Assam<br>(‘000 numbers)</h4>
-        <p class="scr-tip">Scroll <i class="icon-tc ic-up-arr"></i></p>
+        <p class="scr-tip">Swipe <i class="icon-tc ic-right-arr"></i></p>
         <div style="overflow-x:auto; ">
             <table class="cm-table">
                 <tbody>
@@ -541,7 +548,7 @@
                 <p>Eg: There are 55 unemployef civil engineers and our neighbouring state needs people to build the 27th National Highway. We can send our unemployed engineers, while exchanging them with people we need, like teachers.</p>
             </li>
             <li>
-                <p>There are many jobs that require more than a handful of people  In OIL and IOCL. They have a few people for a particular job, like watching over the filtering systems. That person is paid a lot and has to cover a lot of shifts. If instead of 5 people, 20 are appointed and divided in shifts more employment opportunities arise.</p>
+            There are many jobs that require more than a handful of people  In OIL and IOCL. They have a few people for a particular job, like watching over the filtering systems. That person is paid a lot and has to cover a lot of shifts. If instead of 5 people, 20 are appointed and divided in shifts more employment opportunities arise.
             </li>
             <li>We have to make jobs accessible to general public and people who supply are filtered in a computerized system, To have maximum appointed people.</li>
             <li>To ensure regular salaries, we must make Databases that look over the salary paid.</li>
@@ -577,8 +584,7 @@
                 <li>Effective pay method assurances to be met by our people.</li>
                 <li>Division of crops made in April on field studies are made and output checked.</li>
             </ul>
-        </p> 
-        
+        </p>      
         
         
         
@@ -693,7 +699,7 @@
             x.style.opacity = "1";
             
         } else {
-            x.style.left = "-35em";
+            x.style.left = "-100vw";
             x.style.opacity = "0";
         }        
         if (y.style.left === "-5em") {
@@ -708,6 +714,7 @@
 
             var z = document.getElementById("fbtn");
             var w = document.getElementById("nav");
+            var v = document.getElementById("sticky");
             $(window).scroll(function() {
                 if($(this).scrollTop() > 1100) { 
                     z.style.right = "1em";
@@ -719,9 +726,11 @@
                 if($(this).scrollTop() > 1300) { 
                     w.style.top = "0"
                     w.style.opacity = "1"
+                    v.style.bottom = "0"
                 } else {
                     w.style.top = "-5em"
                     w.style.opacity = "0"
+                    v.style.bottom = "-10em"
                 }
             });
         
@@ -907,7 +916,23 @@
                             }]
                         }
                         });
+                        function myFunction() {
+                        document.getElementById("myDropdown").classList.toggle("show");
+                        }
 
+                        // Close the dropdown if the user clicks outside of it
+                        window.onclick = function(event) {
+                        if (!event.target.matches('.dropbtn')) {
+                            var dropdowns = document.getElementsByClassName("dropdown-content");
+                            var i;
+                            for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                            }
+                            }
+                        }
+                        }
         const observer = lozad();
         observer.observe();
 
