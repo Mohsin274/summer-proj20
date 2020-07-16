@@ -320,7 +320,20 @@ hr {
 .main table tr:last-child td:last-child {
     border-bottom-right-radius: 10px;
 } */
+.sticky-btn {
+    position: fixed;
+    bottom: -10em;
+    box-sizing: border-box;
+    width: 100%;
+    display: none;
+    padding: 2vw 4vw;
+    background-color: #f0f0f0de;
+    transition: 0.3s;
+}
 
+.sticky-btn button {
+    width: 85%;
+}
 
 .cont-table {
     height: 100%;
@@ -336,7 +349,7 @@ hr {
     opacity: 0; */
     padding: 0 2em;
     background-color: #f0f0f0;
-    left: -35em;
+    left: -100vw;
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.411);
 }
 body a{
@@ -444,6 +457,7 @@ h4 .bullet {
 
 .icon-tc {
     background-size: 100%;
+    background-repeat: no-repeat;
     display: inline-block;
     width: 1.2em;
     height: 1.2em;
@@ -456,12 +470,24 @@ h4 .bullet {
 .ic-up-arr {
     background-image: url("up-arrow.png");
 }
+.ic-up-arr-w {
+    background-image: url("up-arrow-w.png");
+}
 .ic-list-w {
     background-image: url("table-w.png");
+}
+.ic-menu-w {
+    background-image: url("menu-w.png");
+}
+.ic-right-arr {
+    background-image: url("right-arrow-b.png");
 }
 
 .ic-down-arr-w {
     background-image: url("down-arr-w.png");
+}
+.ic-right-arr {
+    background-image: url("right-arrow.png");
 }
 .info-box ol li {
     margin-bottom: 1.5em;
@@ -523,10 +549,6 @@ h4 .bullet {
 }
 
 
-/* @media screen and (max-width : 320px)
-{} */
-    
-
     
 @media screen and (max-width : 1050px)
 {   
@@ -538,44 +560,43 @@ h4 .bullet {
     }
 
     .main h2 {
-        font-size: 2.7em;
+        font-size: 2.9em;
     }
     .intro {
         padding-bottom: 5vw;
+        width: 80vw;
     }
-    .intro p, .main p, ol li, ul li, ul li p, table tr td {
+    .cont-table {
+        width: 75vw;
+    }
+    .table-menu {
+        height: 100%;
+    }
+    ol {
+        margin-left: 1vw;
+    }
+    .intro p, .main p, ol li, table tr td, .name-grp p{
         font-size: 2em;
+    }
+    .main ul li::before {
+        padding-right: 4vw;
     }
     .intro .btn-grp {
         display: contents;
     }
     .intro .int-btn {
         width: 100%;
-        border-radius: 4vw;
+        border-radius: 2vw;
     }
-    button, a, .tab-caption, .img-caption {
+    button, a, .tab-caption, .img-caption, .img-grp .img-caption, .name-grp h5 {
         font-size: 1.8em;
     }
     .main h3 {
         font-size: 2.3em;
     }
     .main h4, .intro h4, .info-box h4 {
-        font-size: 2.1em;
+        font-size: 2em;
     }
-    /* p, ol li, ul li, table {
-    font-size: 0.9em;
-    line-height: 1.6em;
-    }
-
-    .main .img-caption, .tab-caption {
-        font-size: 0.8em;
-    }
-    .main h2 {
-        font-size: 1.8em;
-    }
-    .main h3 {
-        font-size: 1.4em;
-    } */
     .scr-tip {
         display: block;
     }
@@ -598,6 +619,9 @@ h4 .bullet {
     }
     .nav .nav-btn-grp {
         display: none;
+    }
+    .sticky-btn {
+        display: block;
     }
     .cover {
         padding-bottom: 30vw;
@@ -623,7 +647,6 @@ h4 .bullet {
         }
     .name-grp div:nth-child(4) {
             width: auto;
-            /* margin: 1em auto 0 auto; */
         }
     .main p img, .img-grp img, .img-grp {
             float: none;
@@ -635,7 +658,6 @@ h4 .bullet {
 }
 @media screen and (max-width : 320px)
 {   
-
     .nav p {
         margin-top: 1vw;
     }
