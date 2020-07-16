@@ -163,6 +163,7 @@ body{
     font-weight: bold;
     border-radius: 1vw;
     border: 0;
+    font-family: inherit;
     background-color: chocolate;
     transition: 0.3s;
 }
@@ -535,6 +536,9 @@ h4 .bullet {
     .cover img:nth-child(2) {
         top: 10vh;
     }
+    .main h2 {
+        font-size: 2.7em;
+    }
     .intro {
         padding-bottom: 5vw;
     }
@@ -553,7 +557,7 @@ h4 .bullet {
     .main h3 {
         font-size: 2.3em;
     }
-    .main h4 {
+    .main h4, .intro h4, .info-box h4 {
         font-size: 2.1em;
     }
     /* p, ol li, ul li, table {
@@ -572,6 +576,9 @@ h4 .bullet {
     } */
     .scr-tip {
         display: block;
+    }
+    .float-btn {
+        display: none;
     }
     .nav {
         padding: 2.5vw 4vw;
@@ -602,6 +609,27 @@ h4 .bullet {
     .card{
         display: block;
     }
+    .box-grid {
+        display: block;
+        }
+    .box-grid div {
+        margin: 0;
+
+        }
+    .box-grid div:first-child {
+            border-right: none;
+        }
+    .name-grp div:nth-child(4) {
+            width: auto;
+            /* margin: 1em auto 0 auto; */
+        }
+    .main p img, .img-grp img, .img-grp {
+            float: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border-radius: 3vw;
+            }
 }
 @media screen and (max-width : 320px)
 {   
