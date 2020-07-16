@@ -84,9 +84,16 @@ body{
     margin: 0;
     align-content: center;
 }
-
+.scr-tip {
+    text-align: right;
+    display: none;
+}
 .cover img {
     position: absolute;
+}
+
+.cover img:nth-child(2) {
+    top: 30vh;
 }
 .cover p {font-size: 2vw;}
 
@@ -518,63 +525,36 @@ h4 .bullet {
 /* @media screen and (max-width : 320px)
 {} */
     
-@media screen and (max-width : 1050px) {
-/*    p, ol li {
-    font-size: 1em;
-    line-height: 1.8em;
-    }
-    .img-caption, .tab-caption {
-        font-size: 0.8em;
-    } */
-
-   
-    /* .main h2 {
-        font-size: 2em;
-    }
-    .main h3 {
-        font-size: 1.6em;
-    } */
-
-    .main ol li, .info-box ol li {
-        margin: 0;
-    }
-    .main h3 {
-        margin-top: 2em;
-    }
-    .main p img, .img-grp img, .img-grp {
-        float: none;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        border-radius: 3vw;
-        }
-    .btn-grp {
-        width: auto;
-    }
-    hr {
-        width: 30%;
-    }
-    .box-grid {
-        display: block;
-        }
-    .box-grid div {
-        margin: 0;
-
-        }
-    .box-grid div:first-child {
-            border-right: none;
-        }
-    .name-grp div:nth-child(4) {
-            width: auto;
-            /* margin: 1em auto 0 auto; */
-        }
-}
 
     
-@media screen and (max-width : 750px)
+@media screen and (max-width : 1050px)
 {   
     body {
         overflow-x: hidden;
+    }
+    .cover img:nth-child(2) {
+        top: 10vh;
+    }
+    .intro {
+        padding-bottom: 5vw;
+    }
+    .intro p, .main p, ol li, ul li, table tr td {
+        font-size: 2em;
+    }
+    .intro .btn-grp {
+        display: contents;
+    }
+    .intro .int-btn {
+        width: 100%;
+    }
+    button, a, .tab-caption, .img-caption {
+        font-size: 1.8em;
+    }
+    .main h3 {
+        font-size: 2.3em;
+    }
+    .main h4 {
+        font-size: 2.1em;
     }
     /* p, ol li, ul li, table {
     font-size: 0.9em;
@@ -590,7 +570,9 @@ h4 .bullet {
     .main h3 {
         font-size: 1.4em;
     } */
-    
+    .scr-tip {
+        display: block;
+    }
     .nav {
         padding: 2.5vw 4vw;
     }
