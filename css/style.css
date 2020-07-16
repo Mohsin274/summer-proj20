@@ -536,13 +536,14 @@ h4 .bullet {
     .cover img:nth-child(2) {
         top: 10vh;
     }
+
     .main h2 {
         font-size: 2.7em;
     }
     .intro {
         padding-bottom: 5vw;
     }
-    .intro p, .main p, ol li, ul li, table tr td {
+    .intro p, .main p, ol li, ul li, ul li p, table tr td {
         font-size: 2em;
     }
     .intro .btn-grp {
@@ -550,6 +551,7 @@ h4 .bullet {
     }
     .intro .int-btn {
         width: 100%;
+        border-radius: 4vw;
     }
     button, a, .tab-caption, .img-caption {
         font-size: 1.8em;
