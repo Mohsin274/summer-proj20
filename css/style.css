@@ -533,6 +533,9 @@ h4 .bullet {
     body {
         overflow-x: hidden;
     }
+    button, a {
+        cursor: pointer;
+    }
     .cover {
         padding-top: 20vw;
     }
