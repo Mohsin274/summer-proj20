@@ -39,7 +39,14 @@ body{
     background-color: transparent;
     color: black;
 }
-
+canvas{
+    z-index:-1;
+  } 
+  .dropdown.dropdown-show {
+    top: 0;
+    opacity: 1;
+  
+}
 .dropdown {
     width: 30vw;
     height: 80vh;
@@ -50,18 +57,15 @@ body{
     margin: 5vw;
     right: 7vw;
     opacity: 0;
-    position: fixed;
     z-index: 200;
     border-radius: 2vw;
     transition: 0.5s;
     overflow-y: scroll;
     scrollbar-width: none;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.411);
+
 }
-.dropdown-show {
-    top: 0;
-    opacity: 1;
-}
+
 .dropdown div {
     padding: 2vw;
     
@@ -83,6 +87,7 @@ body{
 }
 .dropdown .close {
     display: none;
+    top: -3vw;
 }
 .nav-btn-grp {
     float: right;
@@ -590,11 +595,12 @@ h4 .bullet {
         border-radius: 0;
         width: 100vw;
         right: 0;
-        top: 0;
+        top: -100vh;
         margin: 0;
         height: 100vh;
         padding: 2vw;
         box-sizing: border-box;
+        box-shadow: none;
     }
     .dropdown .close {
         display: block;
