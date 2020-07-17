@@ -15,12 +15,12 @@
         <img class="lazyload" src="images/cover-img1-small.png" data-src="images/cover-img1.png" style="top: 0; left: 0; width: 25%;">
         <img class="lazyload" src="images/cover-img2-small.png" data-src="images/cover-img2.png" style="right: 0; width: 15%;">
         <h1 class="cov-header">Unemployment<br>in Assam</h1>
-        <p>Case Study by Group B</p>
+        <p>Case Study by Group 2</p>
     </div>
     <nav id="nav" class="nav"><p>Unemployment in Assam</p>
         <div class="nav-btn-grp">
-            <button href="#" onclick="dropDown()" class="dropdown-btn">Groups <i id="rotIcon" class="icon-tc ic-down-arr"></i></button>
-            <button id="ctButton" href="#" onclick="sideBar()" class="int-btn"><i class="icon-tc ic-list-w"></i> Content table</button>
+            <button href="#" class="dropdown-btn">Groups <i id="rotIcon" class="icon-tc ic-down-arr"></i></button>
+            <button id="ctButton" href="#" class="int-btn" type="button"><i class="icon-tc ic-list-w"></i> Content table</button>
         </div>
         <button href="#" id="navMenu" class="int-btn"><i class="icon-tc ic-menu-w" style="width: 2;"></i></button>
         <div id="dropDownBox" class="dropdown">
@@ -44,13 +44,13 @@
         <p>Unemployment had always been a major issue in Assam. It’s 2020, but the issue remains unsolved. There are various factors that contribute to the high rate of unemployment in the state. Many attempts have been made by the state and central government to rectify this issue but those attempts turned out to be unfruitful. The number of job seekers is considerably high and is expected to grow further. Unemployment also leads to various other issues. So, solving this issue may also solve other related issues. And in order to achieve that goal, proper planning and implementation of newer and efficient methods and dedication is required.</p>
         <p>Unemployment is a complex issue with various causes. However it is possible to identify the main  causes of unemployment and find out measures to address these issues. In this article, we will discus every minor to major factors that causes unemployment and some measures to rectify them. We will also look at some survey data published by the government and different agencies. The main goal is to create a society where each and every person can find a sustainable livelihood for themselves and their families. So, let’s get started.</p>
         <div class="btn-grp">
-            <button href="#" id="ctButton" class="int-btn"><i class="icon-tc ic-list-w"></i> Content table</button>
-            <button onclick="window.location.href='#sec2';" class="int-btn"><i class="icon-tc ic-down-arr-w"></i> Continue reading</button>
+            <button href="#" id="ctButton" class="int-btn" type="button"><i class="icon-tc ic-list-w"></i> Content table</button>
+            <button onclick="window.location.href='#sec2';" class="int-btn" type="button"><i class="icon-tc ic-down-arr-w"></i> Continue reading</button>
         </div>        
     </div>
     <div id="sticky" class="sticky-btn">
-        <button href="#" id="ctButton" class="int-btn"><i class="icon-tc ic-list-w"></i> Content table</button>
-        <a href="#" class="int-btn"><i class="icon-tc ic-up-arr-w"></i></a>
+        <button href="#" id="ctButton" class="int-btn" type="button"><i class="icon-tc ic-list-w"></i> Content table</button>
+        <a href="#" class="int-btn" type="button"><i class="icon-tc ic-up-arr-w"></i></a>
     </div>
     <div class="main">
         <a id="fbtn" href="#" class="float-btn"><span class="label">Back to Top</span><i class="icon-tc ic-up-arr"></i></a>
@@ -719,31 +719,7 @@
         <p>Summer training project - 2020</p>
     </div>
     <script type="text/javascript">
-        // function sideBar() {
-        // var w = document.getElementById("clear2");
-        // var x = document.getElementById("sideBar");
-        // var y = document.getElementById("clear");        
-        // if (x.style.opacity === "0") {
-        //     x.style.left = "0";
-        //     x.style.opacity = "1"; 
-        // } else {
-        //     x.style.left = "-100vw";
-        //     x.style.opacity = "0";
-        // }        
-        // if (y.style.left === "-5em") {
-        //     y.style.left = "34vw";
-        //     } else {
-        //         y.style.left = "-5em";
-        //     }
-        
-        // if (w.style.left === "-10vw") {
-        //     w.style.left = "70vw";
-        //     } else {
-        //         w.style.left = "-10vw";
-        //     }
-        // }
-
-        $("#ctButton, #clear, #clear2, .table-menu a").click(function(){
+        $("#ctButton, #clear, #clear2, .table-menu a").on('click touchstart', function(){
                 $("#sideBar").toggleClass("sidebar-show");
                 $("#clear").toggleClass("c-btn-show");
                 $("#clear2").toggleClass("x-btn-show");
@@ -772,7 +748,7 @@
                 }
             });
 
-            $(".dropdown-btn, #navMenu, #close").click(function(){
+            $(".dropdown-btn, #navMenu, #close").on('click touchstart', function(){
                 $(".dropdown").toggleClass("dropdown-show");
                 });
             $(".dropdown-btn").click(function(){
@@ -961,7 +937,9 @@
                         }
                     }
             });
-            $("img.lazyload").lazyload(); 
+
+            $("img.lazyload").lazyload();
+            
     </script>
 </body>
 </html>
