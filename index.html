@@ -719,7 +719,7 @@
         <p>Summer training project - 2020</p>
     </div>
     <script type="text/javascript">
-        $(document).on("click tap touchstart", "#ctButton, #clear, #clear2, .table-menu a", function(){
+        $(document).on("click tap", "#ctButton, #clear, #clear2, .table-menu a", function(){
                 $("#sideBar").toggleClass("sidebar-show");
                 $("#clear").toggleClass("c-btn-show");
                 $("#clear2").toggleClass("x-btn-show");
@@ -748,7 +748,7 @@
                 }
             });
 
-            $(document).on("click tap touchstart", ".dropdown-btn, #navMenu, #close", function(){
+            $(document).on("click tap", ".dropdown-btn, #navMenu, #close", function(){
                 $(".dropdown").toggleClass("dropdown-show");
                 });
             $(".dropdown-btn").click(function(){
