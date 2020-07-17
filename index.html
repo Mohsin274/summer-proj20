@@ -6,97 +6,89 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-deferred@1"></script>
 </head>
 <body>
-    
     <div class="cover">
-        <img src="images/cover-img1.png" style="top: 0; left: 0; width: 25%;">
-        <img src="images/cover-img2.png" style="right: 0; width: 15%;">
+        <img class="lazyload" src="images/cover-img1-small.png" data-src="images/cover-img1.png" style="top: 0; left: 0; width: 25%;">
+        <img class="lazyload" src="images/cover-img2-small.png" data-src="images/cover-img2.png" style="right: 0; width: 15%;">
         <h1 class="cov-header">Unemployment<br>in Assam</h1>
         <p>Case Study by Group 2</p>
     </div>
     <nav id="nav" class="nav"><p>Unemployment in Assam</p>
         <div class="nav-btn-grp">
-            <button href="#" onclick="dropDown()" class="dropdown-btn">Groups</button>
-        
-            <button href="#" onclick="sideBar()" class="int-btn"><i class="icon-tc ic-list-w"></i> Content table</button>
+            <button href="#" onclick="dropDown()" class="dropdown-btn">Groups <i id="rotIcon" class="icon-tc ic-down-arr"></i></button>
+            <button id="ctButton" href="#" onclick="sideBar()" class="int-btn"><i class="icon-tc ic-list-w"></i> Content table</button>
         </div>
-        <button href="#" onclick="sideBar()" class="int-btn"><i class="icon-tc ic-menu-w" style="width: 2;"></i></button>
-        <div id="dropDown" class="dropdown">
+        <button href="#" id="navMenu" class="int-btn"><i class="icon-tc ic-menu-w" style="width: 2;"></i></button>
+        <div id="dropDownBox" class="dropdown">
             <div>
-                <h2>Illegal immigration in Assam</h2>
-                <p>Group B</p>
-                <button href="#" onclick="sideBar()" class="int-btn">Read</button>
+                <button id="close" href="#" onclick="dropDown()" class="close"><i class="icon-tc ic-close-w"></i></button>
+                <img class="lazyload" data-src="images/Assam-border.jpg" style="width: 100%">
+                <h3>Illegal immigration</h3>
+                <p>Group A</p>
+                <button href="#" class="int-btn">Read</button>
             </div>
+            <hr>
             <div>
-                <h2>Unemployment in Assam</h2>
+                <h3>Unemployment in Assam</h3>
                 <p>Group B</p>
             </div>
         </div>
     </nav>
     <div class="intro">
-        <h4 id="sec1">INTRODUCTION</h4>
+        <h4 id="sec1">INTRODUCTION</h4> 
         <hr>
         <p>Unemployment had always been a major issue in Assam. It’s 2020, but the issue remains unsolved. There are various factors that contribute to the high rate of unemployment in the state. Many attempts have been made by the state and central government to rectify this issue but those attempts turned out to be unfruitful. The number of job seekers is considerably high and is expected to grow further. Unemployment also leads to various other issues. So, solving this issue may also solve other related issues. And in order to achieve that goal, proper planning and implementation of newer and efficient methods and dedication is required.</p>
         <p>Unemployment is a complex issue with various causes. However it is possible to identify the main  causes of unemployment and find out measures to address these issues. In this article, we will discus every minor to major factors that causes unemployment and some measures to rectify them. We will also look at some survey data published by the government and different agencies. The main goal is to create a society where each and every person can find a sustainable livelihood for themselves and their families. So, let’s get started.</p>
-        <!-- <p><b>Unemployment Rate, UR = (No. of Unemployed Persons / Total Labourforce) &times; 100 </b></p> 
-        <p><b>Where, labour force refers to all those people who willing and able to work.</b></p> -->
         <div class="btn-grp">
-            <button href="#" onclick="sideBar()" class="int-btn"><i class="icon-tc ic-list-w"></i> Content table</button>
+            <button href="#" id="ctButton" class="int-btn"><i class="icon-tc ic-list-w"></i> Content table</button>
             <button onclick="window.location.href='#sec2';" class="int-btn"><i class="icon-tc ic-down-arr-w"></i> Continue reading</button>
         </div>        
     </div>
     <div id="sticky" class="sticky-btn">
-        <button href="#" onclick="sideBar()" class="int-btn"><i class="icon-tc ic-list-w"></i> Content table</button>
+        <button href="#" id="ctButton" class="int-btn"><i class="icon-tc ic-list-w"></i> Content table</button>
         <a href="#" class="int-btn"><i class="icon-tc ic-up-arr-w"></i></a>
     </div>
     <div class="main">
-        <!-- <div class="float" -->
         <a id="fbtn" href="#" class="float-btn"><span class="label">Back to Top</span><i class="icon-tc ic-up-arr"></i></a>
-        
-        <!-- <div id="fbtn" class="float-grp">
-            <a href="javascript:void(0)" onclick="sideBar()" class="float-btn"><span class="label">Content Table</span><i class="icon-tc ic-list"></i></a>
-            <a  href="#"  class="float-btn"><span class="label">Back to Top</span><i class="icon-tc ic-up-arr"></i></a>
-            onclick="window.location.href='#';"
-        </div>  -->
-        <h2 id="sec1">What is Unemployment?</h2>
+        <h2 id="sec2">What is Unemployment?</h2>
         <hr>
-        <p>A person is said to be unemployed if he/she, despite being physically and mentally fit to work, is unable to find a job. The economy of a country is highly dependent upon employment. High rate of unemployment leads to economic distress. According to the Organisation for Economic Co-operation and Development (OECD), “Unemployment is persons above a specified age (usually above 15) not being in paid employment or self-employment but currently available for work during the reference period.” The Census of India defines all persons engaged in ‘work’ as participation in any economically productive activity with or without compensation, wages or profits are workers.</p>
-        <h3 id="sec2">Types of Unemployment</h3>
+        <p>A person is said to be unemployed if he/she, despite being physically and mentally fit to work, is unable to find a job. The economy of a country is highly dependent upon employment. High rate of unemployment leads to economic distress. According to the Organisation for Economic Co-operation and Development (OECD), “Unemployment is persons above a specified age (usually above 15) not being in paid employment or self-employment but currently available for work during the reference period.”</p>
+        <h3 id="sec3">Types of Unemployment</h3>
         <p>Before discussing about unemployment issue and it’s causes, let’s discuss about the types of unemployment. The following are some of the major types of Unemployment: </p>
-        <h4 id="sec3">Rural Unemployment</h4>
+        <h4>Rural Unemployment</h4>
         <p>Around  85.90 percent of Assam’s population live in Rural areas. But, there are not enough employment opportunities in those rural areas. This, gives rise to unemployment rate.</p>
         <p>
-        <h4 id="sec3">Seasonal unemployment</h4>
+        <h4>Seasonal unemployment</h4>
         <p>As stated above, Around  85.90 percent of Assam’s population live in Rural areas. So, a large population of Assam is highly dependent upon agricultural. But, they can’t grow their crops all year round. During off-season, they go completely unemployed.</p>
-        <h4 id="sec3">Urban Unemployment</h4>
+        <h4>Urban Unemployment</h4>
         <p>With more and more people moving to urban area in search of jobs, urban unemployment is also growing.</p>
-        <h4 id="sec3">Industrial Unemployment</h4>
+        <h4>Industrial Unemployment</h4>
         <p>People who are willing to work in factories or industries in urban areas but cannot find work fall in this category.</p>
-        <h4 id="sec3">Educated Unemployment</h4>
+        <h4>Educated Unemployment</h4>
         <p>People who are educated but are unable to find a job that best matches their qualifications fall in this category. With the growing literacy rates, educated unemployment is also growing.</p>
-        <h4 id="sec3">Technological Unemployment</h4>
+        <h4>Technological Unemployment</h4>
         <p>This type of unemployment occurs every time a new technology arrives and the existing workforce are unable to cope with the new technology. They become unemployed when they are unable to adapt to the new technology. This type is unemployment is constantly growing with technological advancements. </p>
-        <h3 id="sec2">Effects of unemployment</h3>
+        <h3 id="sec4">Effects of unemployment</h3>
         <p>The major effects of unemployment are given below:</p>
-        <h4 id="">Impact on Individuals</h4>
+        <h4>Impact on Individuals</h4>
         <ol>
             <li><b><u>Mental health:</u></b> Those who are unable to get a job despite having the required qualifications, undergo some mental health problems.</li>
             <li><b><u>Living standards:</u></b> The unemployed people can not afford or access some essential services which lowers their standards of living.</li>
             <li><b><u>Life expectancy:</u></b> The unemployed people are unable to afford healthcare facilities which shortens their lifespan. </li>
         </ol>
-        <h4 id="">Impact on Society</h4>
+        <h4>Impact on Society</h4>
         <ol>
             <li><b><u>Literacy:</u></b> The absence of income created by unemployment can force families to deny educational opportunities to their children and deprive the economy of those future skills.</li>
             <li><b><u>Crime rates:</u></b> The unemployed people can not afford or access some essential services which lowers their standards of living.</li>
             <li><b><u>Life expectancy:</u></b> Studies have revealed that a unemployed person may involve in criminal activities to meet their economic needs.</li>
         </ol>
-        <p>Moreover, Unemployment also effects the overall <b>economy of the state</b>. It also has a significant and negative effect on per capita GDP (which is basically the average income earned by a person in a given area in a specific year) in long-run and short-run.</p>
+        <p>Moreover, Unemployment also effects the overall <b>economy of the state</b>. It has a significant and negative effect on per capita GDP (which is basically the average income earned by a person in a given area in a specific year) in long-run and short-run.</p>
 
-        <h3 id="">Why is it important to solve unemployment issue?</h3>
+        <h3 id="sec5">Why is it important to solve unemployment issue?</h3>
         <ol>
             <li>To raise the living standards of people.</li>
             <li>To boost the economy of the state.</li>
@@ -105,20 +97,19 @@
             <li>To increase the literacy rate of the state.</li>
             <li>To reduce mental heath issues caused by unemployment.</li>
         </ol>
-        <h2 id="sec2">Assam: A brief introduction</h2>
+        <h2 id="sec6">Assam: A brief introduction</h2>
         <hr>      
-        <img class="lozad" src="images/assam_tea_garden.jpg">
+        <img class="lazyload" data-src="images/assam_tea_garden.jpg">
         <p class="img-caption">Tea garden in Assam</p>
         <p>The state of Assam is located in the north-eastern region of India. Assam is known for it’s Assam tea and Assam silk. Assam was the first site for oil drilling in Asia. India’s second largest hydrocarbon exploration and production public sector company has its operational headquarters in Duliajan of Assam. It is also known as the “Gateway to North East” because it connects all the north-eastern states with rest of India via Siliguri Corridor. It is also emerging as “The gateway to South-east Asia.” Kaziranga National Park and Manas National Park are two World Heritage Sites located in Assam.</p>
-        <h3 id="sec3">Demographics</h3>
+        <h3 id="sec7">Demographics</h3>
         <p>
         According to 2011 census, the total population of Assam was 31,169,272. The total population of the state has increased from 26,638,407 to 31,169,272 in the last ten years with a growth rate of 16.93%. The population of Assam is expected to reach 34.18  million by 2021 and 35.60 million by 2026.
         <h4 class="t-head">Population Growth of Assam</h4>
         <canvas id="chart1"></canvas>
         <p class="tab-caption">Source: Census of India</p>
         </p>
-        <!-- <canvas id="popGrowth"></canvas> -->
-        <h3 id="sec3">Lliteracy</h3>
+        <h3 id="sec8">Lliteracy</h3>
         <p>
             As per Census 2011, the literacy rate of Assam was 72.19, with male literacy rate
             77.85, which was behind the national average of 72.99 and male literacy rate of 80.89
@@ -127,9 +118,9 @@
             percent respectively.
         </p>
 
-        <h3 id="sec3">Education</h3>
+        <h3 id="sec9">Education</h3>
         <p>
-            There are 9 Universities and around 500 colleges in Assam. Every year, around 5 lakh students enroll in Private and Government colleges of Assam.
+            There are 9 Universities and around 500 colleges in Assam. Every year, over 5 lakh students enroll in Private and Government colleges of Assam.
             <div style="overflow-x:auto;">
             <table>
                 <tbody>       
@@ -197,17 +188,15 @@
             </table></div>
             <p class="tab-caption">Table: Enrollment at different levels</p>
         </p>
-        <h3 id="sec3">Economy</h3>
+        <h3 id="sec10">Economy</h3>
         <p>
             The economy of Assam is based on Agriculture and Oil. Assam produces produces more than half of total tea production of India. The Assam-Arakan basin holds about a quarter of the country's oil reserves, and produces about 12% of its total petroleum. Per capita GDP of Assam is estimated to be ₹6,157 at constant prices (1993–94) and ₹10,198 at current prices, which is almost 40% lower than that in India. According to the recent estimates, per capita income in Assam has reached ₹6756 (1993–94 constant prices) in 2004–05, which is still much lower than India's.
         </p>
-        
-        
         <h4>Agriculture</h4>
         <div class="img-grp">
-            <img class="lozad" src="images/Rice-prd.jpg">
+            <img class="lazyload" data-src="images/Rice-prd.jpg">
             <p class="img-caption">Rice field in Assam</p>
-            <img class="lozad" src="images/fixedw_large_4x.jpg">
+            <img class="lazyload" data-src="images/fixedw_large_4x.jpg">
             <p class="img-caption">Mustard seed field in Assam</p>
         </div>
             <ol>
@@ -226,29 +215,27 @@
             </ol>
             <h4>Tourism</h4>
             <div class="img-grp">
-                <img class="lozad" src="images/kamakhya.jpg">
+                <img class="lazyload" data-src="images/kamakhya.jpg">
                 <p class="img-caption">Kamakhya temple, Guwahati</p>
-                <img class="lozad" src="images/majuli.jpg">
-                <p class="img-caption">Majuli river island</p>
+                <img class="lazyload" data-src="images/kaziranga-jan12-2.jpg">
+                <p class="img-caption">Kaziranga National Park</p>
             </div>
             <ol>
                 <li>Kaziranga National Park</li>
                 <li>Manas National Park</li>
                 <li><u>Guwahati</u>: Kamakhya Temple, Shankardev Kalakshetra, Umananda Temple, Assam State Zoo, Shilpagram etc. Chandubi Lake, Sonapur, Madan Kamdev, Chandrapur, Pobitora Wildlife Sanctuary, etc.</li>
                 <li><u>Majuli</u>: Kamalabari Satra, Dakhinpat Satra, Garamurh Satra, Auniati Satra, Bengenaati Satra and Samaguri Satra.</li>
-                <li><u>Sonitpur</u>:  Nameri National Park, Bura Chapori Wildlife Sanctuary, Sonai Rupai Wildlife Sanctuary and a part of Orang National Park, Bhalukpong is also an important tourist place. Tezpur is a small town steeped in history and culture. Some of these are Agnigarh, Mahabhairav Temple, Chitralekha Udyan, Bamuni Hills, Usha Pahar etc. </li>
-                <li><u>Sivasagar</u>: Rang Ghar, Talatal Ghar, Sivadol, Kareng Ghar of Garhgaon, Joy Dol, Sivasagar Tank, Joysagar Tank, Joymati Maydam, Vishnu Dol, Devi Dol, Gourisagar Dol and Tank, Charaideo, Tai Museum and Uttaran Museum, Namdang Stone Bridge, Panidihing Bird Sanctuary, etc. </li>
+                <li><u>Sonitpur</u>:  Nameri National Park, Bura Chapori Wildlife Sanctuary, Sonai Rupai Wildlife Sanctuary and a part of Orang National Park, Bhalukpong, Tezpur, etc. </li>
+                <li><u>Sivasagar</u>: Rang Ghar, Talatal Ghar, Sivadol, Kareng Ghar of Garhgaon, Joy Dol, Sivasagar Tank, Joysagar Tank, Joymati Maydam, Devi Dol, Panidihing Bird Sanctuary, etc. </li>
             </ol>
             <h4>Industries</h4>
             <div class="img-grp">
-                <img class="lozad" src="images/oil-refinery-scaled.jpg">
+                <img class="lazyload" data-src="images/oil-refinery-scaled.jpg">
                 <p class="img-caption">Numaligarh Refinery, Assam</p>
-                <img class="lozad" src="images/sun-pharma.jpg">
+                <img class="lazyload" data-src="images/sun-pharma.jpg">
                 <p class="img-caption">Sun Pharma, Guwahati</p>
-                <img class="lozad" src="images/britannia.jpg">
+                <img class="lazyload" data-src="images/britannia.jpg">
                 <p class="img-caption">Britannia's largest greenfield facility<br>Rampur, Assam</p>
-                <!-- <img src="britannia.jpg">
-                <p class="img-caption">Britannia's largest greenfield facility at Assam</p> -->
             </div>   
             <ol>
                 <li>Petroleum and natural gas-based industries </li>
@@ -268,7 +255,7 @@
                 <li>Cane and bamboo-based industries </li> 
                 <li>Other handicrafts industry </li>
             </ol>
-        <h2 id="sec4">The employment market in Assam</h2>
+        <h2 id="sec11">The employment market in Assam</h2>
         <hr>
         <p>The population censuses, different quinquennial rounds of National sample Survey on employment data, Employment and Unemployment Surveys conducted by the Labour Bureau and Economic Census provides data on employment structure and workforce as well as involvement of human resources in economic activity, employment etc. On the other hand, the data available from the Employment Exchanges does not give a clear picture on unemployment as a large number of unemployed people either did not register their names with Employment Exchanges or those who secure employment through other channels do not delete their names from the records of Employment Exchanges.</p>
         <p>The Census of India collects information on economic activity of an individual and classifies workers into two groups namely, Main workers and Marginal workers. Main workers are those who had worked for the major part of the reference period i.e. six months or more and Marginal workers are those who had worked less than six months. The following table shows the trend of Main workers, Marginal workers and Non-workers in Assam according to the last three censuses.</p>
@@ -332,7 +319,7 @@
             </table>
         </div>
         
-        <h3 id="">Labour Force Participation Rate</h3>
+        <h3 id="sec12">Labour Force Participation Rate</h3>
         <p>The result of the Fifth Annual Employment Unemployment Survey, 2015-16 conducted by the Labour Bureau reveals that the Labour Force Participation rate in respect of the age-group 15 years and above according to usual status approach for both principal status (ps) and subsidiary status (ss) in Assam is 53 percent in rural areas, 50 percent in urban areas and 53 percent taking urban and rural areas as a whole against the all India rate of 56 percent, 44 percent and 52 percent respectively. The figure given below shows the Labour Force Participation Rate (per 1000) for persons aged 15 years and above in the State. </p>
         <h4 class="t-head">Employment in Shops and Commercial establishments in Assam<br>(‘000 numbers)</h4>
         <p class="scr-tip">Swipe <i class="icon-tc ic-right-arr"></i></p>
@@ -442,12 +429,11 @@
         <canvas id="chart6"></canvas>
 
         <p>The percentage share of male and female main workers is 44 percent and 11 percent respectively as per Census 2011 shows a slight increase over the composition of male (42%) and female (10%) main workers as per Census 2001.</p>
-        <p>EMI programme gives information about the level of employment in the organised sector of the economy, which covers all establishments in the public sector and non-agricultural establishments employing 10 or more persons in the private sector. Collection of data under the EMI programme is reported through an ‘Establishment Reporting System’. The trend of employment in public and private sector from 2007 to 2016 as per data collected through Employment Market Information Programme is shown below.</p>
 
-        <h2 id="sec4">Unemployment in Assam: Overview</h2>
+        <h2 id="sec13">Unemployment in Assam: Overview</h2>
         <hr>
         <p>Unemployment has always been a major problem in Assam. Although, the GDP and the Net State Domestic Product (NSDP) of the state expanded between 2011-12 and 2016-17, the job market in Assam is quiet disappointing. According to a report published in October 2017 by the North Eastern Development Finance Corporation Limited (NEDFL), over 1.75 lakh jobs will be required by the state annually till 2020. However, the report didn't include employment in agriculture and plantation farm sectors and government offices. So, this requirement is even more. Employment in Assam is not growing at the same pace of mushrooming young population. Therefore, Assam is currently facing a twin issue.</p>
-        <h3 id="">Current scenario</h3>
+        <h3 id="sec14">Current scenario</h3>
         <p>According to report published by the State Skill, Employment and Entrepreneurship Department on November 2018, there are a total of 19,63,376 registered unemployed in the state, out of which 16,65,866 are educated or skilled and 2,97,510 are unskilled.</p>
 
         <p>The report also stated that there are 942 unemployed medical graduates, 7,804 jobless engineering graduates, 327 jobless veterinary graduates, 832 jobless agri graduates, 16,576 jobless postgraduates, 3,17,8 24 general graduates, 6,82,796 HS-passed candidates, 5,67,340 HSLC-passed candidates, 9,167 diploma holders, 16,121 ITI certificate holders and 46,137 others in the state.</p>
@@ -456,37 +442,31 @@
         <canvas id="chart7"></canvas>
         <p class="tab-caption">Source: Centre for Monitoring Indian Economy (CMIE)</p>
 
-        <p>The number of the educated job seekers is considerably high, which is a challenge before the growing economy of the State. According to the live register of Employment Exchanges, there were 1642718 registered educated job seekers during 2016 against 1523531 during 2015. That means is grew by 7.82 percent during 2016. The percentage of educated job seekers constitutes about 82 percent of the total job-seekers. The overall registration of educated job seekers as per record of Employment Exchanges has increased by 9 percent in 2016 over the previous year. A noticeable development has been observed in registration at all levels of education during 2016. Unlike in the previous year’s, number of educated job seekers has increased at all level of education in 2016 over 2015. The year, 2016 depicts an increase in registration of Engineering Graduates (59%), Medical Graduates (107%), Agriculture Graduates (90%), Veterinary Graduates (100%), ITI passed (2.5%), Post Graduates (3.7%), Diploma holders(255%) and Others (166%). The detail distributions of the educated job seekers are shown in the table below.</p>
+        <p>The number of the educated job seekers is considerably high, which is a challenge before the growing economy of the State. According to the live register of Employment Exchanges, there were 1642718 registered educated job seekers during 2016 against 1523531 during 2015. That means is grew by 7.82 percent during 2016. The percentage of educated job seekers constitutes about 82 percent of the total job-seekers. The overall registration of educated job seekers as per record of Employment Exchanges has increased by 9 percent in 2016 over the previous year. A noticeable development has been observed in registration at all levels of education during 2016. Unlike in the previous year’s, number of educated job seekers has increased at all level of education in 2016 over 2015. The year, 2016 depicts an increase in registration of Engineering Graduates (59%), Medical Graduates (107%), Agriculture Graduates (90%), Veterinary Graduates (100%), ITI passed (2.5%), Post Graduates (3.7%), Diploma holders(255%) and Others (166%).</p>
 
-        <h2 id="">Causes of Unemployment in Assam</h2>
+        <h2 id="sec15">Causes of Unemployment in Assam</h2>
         <hr>
         <p>The following are the main causes of unemployment in Assam: </p>
-        <h3 id="">lack of Skills</h3>
+        <h3>lack of Skills</h3>
         <p>The fact that a large number of people are unemployed is mainly because they do not have the skills required for a job. </p>
-        <h3 id="">Immigration</h3>
+        <h3 id="sec16">Immigration</h3>
         <p>People can move from any state to any state in search of job. Infact, many people from Assam have moved to different states of India to work. So, should immigration be termed as a cause of unemployment in Assam? But, the real question is whether there are enough jobs in the state to employ its own people? Answer is a Big No. 
         There are not adequate jobs to employ people of the state. But, every year many people move to Assam from other neighbouring states of India as well as neighbouring countries. </p>
-        <h3 id="">Population growth</h3>
+        <h3 id="sec17">Population growth</h3>
         <p>The population of Assam grew from 3.29 million in 1901 to 6.70 million in 1941. It increased to 14.63 million in 1971 and 22.41 million in 1991. It increased to 26,655,528 in 2001 and 31,205,576  in 2011. Which means it grew by a rate of 17.1% in 2011. But, the employment rate did not grow at the same rate. Hence, unemployment rate kept on rising.</p>
-        <h3 id="">lack of adequate fund-allocation</h3>
+        <h3 id="sec18">lack of adequate fund-allocation</h3>
         <p>Improper governmental programs targeting the unemployed population can harm the employment situation of the state. Lack of commitment to adress the job crisis causes employment to fall.</p>
-        <h3 id="">Role of Government</h3>
+        <h3 id="sec19">Role of Government</h3>
         <p>The government can play a major role in solving the job crisis in the states. Finding and implementing methods to solve this issue is completely in the hands of the government. But, due to lack of commitment, unemployment remained unsolved.</p>
-        <h3 id="">Slow rate of economic growth</h3>
+        <h3 id="sec20">Slow rate of economic growth</h3>
         <p>Slow economic growth also causes unemployment. Slow economic growth implies that there are not ample jobs to absorb the unemployed people who are able and willing to work.</p>
-        <!-- <h3 id=""></h3>
-        <p></p>
-        <h3 id=""></h3>
-        <p></p> -->
-
-        <!-- 1.  -->
-        <h2 id="">Suggestions to Solve Unemployment Problem</h2>
+        <h2 id="sec21">Suggestions to Solve Unemployment Problem</h2>
         <hr>
         <p>Although, unemployment is a complex issue, it's not impossible to to rectify it. Proper planning and implementation of better methods in a productive way may definitely solve this issue. Given below are some methods that could be helpful:</p>
-        <h3 id="">Change in education system</h3>
+        <h3 id="sec22">Change in education system</h3>
         <p>It’s very important to change the current educational pattern. Students who are interested in higher studies should be admitted in colleges and universities. Qualified engineers should be encouraged to start their own small units.</p>
         <p><i><b>Probable outcome:</b> An improved and better education patter will increase the competence among the youth of Assam and enable them to provide employment to others.</i></h3>
-        <h3 id="">Policy regarding seasonal unemployment</h3>
+        <h3 id="sec23">Policy regarding seasonal unemployment</h3>
         <p>Seasonal unemployment occurs in agriculture sector and agro based industries. In order to solve this, this following should be done:</p>
         <ol>
             <li>Agriculture should have multiple cropping,</li>
@@ -494,58 +474,58 @@
             <li>Cottage industries should be encouraged.</li>
         </ol>
         <p><i><b>Probable outcome:</b> This will reduce seasonal unemployment as farmers will be able to involve in agricultural activities all year round.</i></h3>
-        <h3 id="">Change in industrial technique</h3>
+        <h3 id="sec24">Change in industrial technique</h3>
         <p>Production technique should match with the needs and means of the state. Capital intensive technology should be replaced with Labour intensive technology.</p>
         <p><i><b>Probable outcome:</b> Labour intensive technology require more people so this can help increase employment opportunities.</i></h3>
-        <h3 id="">Expansion of Employment exchanges</h3>
+        <h3 id="sec25">Expansion of Employment exchanges</h3>
         <p>More employment exchanges should be set up. Information regarding employment opportunities should be given to people.</p>
         <p><i><b>Probable outcome:</b> This will facilitate the unemployed people to find a suitable job and industries to find suitable manpower.</i></h3>
-        <h3 id="">Setting up skill development center</h3>
+        <h3 id="sec26">Setting up skill development center</h3>
         <p>North-east skill development center is located at Garchuk, Guwahati. But, that is not enough to train every unskilled worker of Assam. More such centers should be opened in different parts of the state.</p>
         <p><i><b>Probable outcome:</b> Those who are unskilled, will be able to reach these centers and get trained which will help them get a job.</i></h3>
-        <h3 id="">More assistance to self employed people</h3>
+        <h3 id="sec27">More assistance to self employed people</h3>
         <p>People who are engaged in agriculture, trade, cottage and small scale industries etc. should be helped financially, providing raw materials and technical training.</p>
         <p><i><b>Probable outcome:</b> Proving assistance and resources will not only empower those who are self-employed but will also encourage others to choose self-employment.</i></h3>
-        <h3 id="">Full and more productive employment</h3>
+        <h3 id="sec28">Full and more productive employment</h3>
         <p>The main objective of states’s employment policy should be to increase employment opportunities and productivity of labour. Govt. should adopt a policy that provides employment to all people.</p>
         <p><i><b>Probable outcome:</b> Adopting better policies will bring employment opportunities for a large number of people.</i></h3>
-        <h3 id="">Increase in Production</h3>
+        <h3 id="sec29">Increase in Production</h3>
         <p>It is important to increase production in agriculture and industrial sectors in order to increase employment. Development of small and cottage industries should be encouraged.</p>
         <p><i><b>Probable outcome:</b> When production increases, the needs for workers also increases. So, increasing production will give rise to unemployment opportunities.</i></h3>
-        <h3 id="">High rate of capital formation</h3>
+        <h3 id="sec30">High rate of capital formation</h3>
         <p>Rate of capital formation in the country should be accelerated. Capital formation should be particularly encouraged in such activities which generate greater employment opportunities. Capital output ratio should be kept low.</p>
         <p><i><b>Probable outcome:</b> When production increases, the needs for workers also increases. So, increasing production will give rise to unemployment opportunities.</i></h3>
-        <h3 id="">Industries in co-operative sector</h3>
+        <h3 id="sec31">Industries in co-operative sector</h3>
         <p>The Govt. should take necessary steps to encourage Industries in co-operative sector in the state. This could help solve unemployment issue up to a great extent.</p>
         <p><i><b>Probable outcome:</b> Kerala Govt. set up a textile mill covering 600 unemployed persons on co-operative basis. Following this step may give similar results in Assam.</i></h3>
-        <h3 id="">Encouraging start-ups</h3>
+        <h3 id="sec32">Encouraging start-ups</h3>
         <p>The government should encourage the youth to have their own start-up ideas. They should be provided with proper training and funds to implement their ideas. </p>
         <p><i><b>Probable outcome:</b> Those who have any start-up idea, will be able to provide employment to those who are willing to work.</i></h3>
-        <h3 id="">Decentralisation of industrial activity</h3>
+        <h3 id="sec33">Decentralisation of industrial activity</h3>
         <p>The Govt. should adopt policies which encourage decentralisation of industrial activity. Decentralisation of Industrial activity is necessary to reduce unemployment. There will be less employment opportunities in the under developed areas if industrial activities are centralised at one place.</p>
         <p><i><b>Probable outcome:</b> Decentralisation will increase industrial activities in the state which will increase the need of workforce.</i></h3>
-        <h3 id="">Population control</h3>
+        <h3 id="sec34">Population control</h3>
         <p>In order to solve unemployment issue, the growth of population should be kept in control. Family planning programme should be implemented in an effective manner.</p>
         <p><i><b>Probable outcome:</b> Keeping population in check will help the government lower unemployment rate of the state.</i></p>
-        <h3 id="">Designate tax free zones</h3>
+        <h3 id="sec35">Designate tax free zones</h3>
         <p>The should open up Special economic zone that will offer the foreign investors tax and customs incentives. This method is used by other Indian states like Goa, Chhattisgarh, Gujarat, Andhra Pradesh, Odisha, etc.</p>
         <p><i><b>Probable outcome:</b> Offering tax incentives will attract foreign investors. More investments in the state will generate jobs for the unemployed people.</i></p>
         
-        <h2 id="sec4">Our solutions to counter unemployment</h2>
+        <h2 id="sec36">Our solutions to counter unemployment</h2>
         <hr>
         <ol>
             <li>
-                <p>counter seasonal employment:</p> 
-                <p>Eg: For Crop related harvesting, as we know, there are types of crops like Rabi and Kharif. If we grow Rabi crops in a particular season, harvested at the end of March, we can grow kharif crops From June to September, meaning we can harvest different crops in the same season.</p>
-                <p>Research teams headed by scientists, testing the fields may be divided from village to village. This serves two purposes:</p>
+                To counter seasonal employment:<br>
+                Eg: For Crop related harvesting, as we know, there are types of crops like Rabi and Kharif. If we grow Rabi crops in a particular season, harvested at the end of March, we can grow kharif crops From June to September, meaning we can harvest different crops in the same season.<br>
+                Research teams headed by scientists, testing the fields may be divided from village to village. This serves two purposes<br>
                 <ol type="i">
                     <li>Reasearch teams may be graduates of chemistry or medical science who are unemployed at that moment, but have got employment opportunities by this effort.</li>
                     <li>The crops when divided by seasons and based on the fields they are grown in will provide more scope for growth of more crops.</li>
                 </ol>
             </li>
             <li>
-                <p>Databases are to be made of all the unemployed people and their qualifications. Their database will be exchanged with the neighbouring districts.</p>
-                <p>Eg: There are 55 unemployef civil engineers and our neighbouring state needs people to build the 27th National Highway. We can send our unemployed engineers, while exchanging them with people we need, like teachers.</p>
+               Databases are to be made of all the unemployed people and their qualifications. Their database will be exchanged with the neighbouring districts.
+               <br>Eg: There are 55 unemployef civil engineers and our neighbouring state needs people to build the 27th National Highway. We can send our unemployed engineers, while exchanging them with people we need, like teachers.
             </li>
             <li>
             There are many jobs that require more than a handful of people  In OIL and IOCL. They have a few people for a particular job, like watching over the filtering systems. That person is paid a lot and has to cover a lot of shifts. If instead of 5 people, 20 are appointed and divided in shifts more employment opportunities arise.
@@ -553,7 +533,7 @@
             <li>We have to make jobs accessible to general public and people who supply are filtered in a computerized system, To have maximum appointed people.</li>
             <li>To ensure regular salaries, we must make Databases that look over the salary paid.</li>
         </ol>
-        <h3 id="sec4">Roadmap</h3>
+        <h3 id="sec37">Roadmap</h3>
         <p>We divide our work based on three types:
             <ul>
                 <li>Database based work</li>
@@ -585,21 +565,40 @@
                 <li>Division of crops made in April on field studies are made and output checked.</li>
             </ul>
         </p>      
-        
-        
-        
-       
-        
+        Planning and execution strategy 
+        <h3 id="sec38">Planning and execution strategy </h3>
+        <ol>
+            <li>We will form a team to initialize our works.</li>
+            <li>We will hire people for our Research team, Database Team and Training team.</li>
+            <li>We will create a system to keep track of our works in real-time. Our team members will have to give updates about their progress though that tracking system.We will create a system to keep track of our works in real-time. Our team members will have to give updates about their progress though that tracking system.</li>
+            <li>We will explain our plans to the gram panchayats and ask for necessary permissions.</li>
+            <li>We will collect unemployment data and conduct surveys if required.</li>
+            <li>Our database entry team will update our database and Research team will provide soil testing data.</li>
+            <li>We create a automatic system to create job profiles using the database. We may also share our databases with other job matching platforms.</li>
+            <li>We will launch a website to make our initiative transparent.</li>
+            <li>We will start social media channels to spread the word through the internet. We will also start offline campaigns in rural areas to raise awareness about our initiative. </li>
+            <li>Our training team will visit the villages and dicuss with the farmers about different crops that can be grown in different seasons.</li>
+        </ol>
+        <h3 id="sec39">Efficiency of our plan</h3>
+        <p>We will do this in a phased manner. We will start with small nearby villages. We will search and include more people who may be interested to work with us. So, our plan itself has some employment opportunities. When we will have a bigger team team and more funds, we will try to visit every corner of Assam.</p>
+        <h3 id="sec40">Are our solutions Unique?</h3>
+        <p>We don't claim our solutions to be unique since these are some standard solutions used around the world and gave satisfactory results in most cases. We are also fully aware of the fact that someone somewhere might have even better and more effective solutions in their mind. In that case, we would like to know their ideas and join hands with them to solve unemployment issue together.</p>
+        <h3 id="sec41">Impact on environment</h3>
+        <p>Our solutions do not seem have any negative impact of the environment since we are only dealing with Soil testing on available agricultural lands only and Database entry in digital mode. Moreover, we will not consume any natural resources. Although, there will be consumption of electricity during database entry, we don't think it should raise any concern.</p>
+        <h3 id="sec42">Impact on society</h3>
+        <p>Our chief goal is to reduce unemployment in Assam. We think that our initiative will definitely help the unemployed people in finding a sustainable livelihood for themselves and their families. Since, majority of Assam’s population is dependent upon agriculture, so our prime focus is to reduce seasonal unemployment. We hope that our initiative will reduce seasonal unemployment in rural areas of Assam. Moreover, by creating a database of unemployed people we will have a clear picture of how big the issue is, and be able to solve it accordingly. Our automatic profile making and job matching platform will also help those who are skilled but unemployed.</p>
+        <h3 id="sec43">Future Goals</h3>
+        <p>If everything goes according to plan and we get positive results, we would like to visit every remote villages of Assam. The proximity of our initiative shall continue to expand in the future. We shall be open to companies, Organisations and teams who share a common goal. We also will seek financial support from the government and raise funds. We shall continue to update our databases so that we can have a clear picture of unemployment in Assam and provide opportunities to more people.</p>       
 
-        <h2 id="sec4">Conclusion</h2>
+        <h2 id="sec44">Conclusion</h2>
         <hr>
         <p>Unemployment is a big problem. Every developing country is dealing with this. This issue can not be solved within a day or even a year. It may take years. But, immediate measures are required to solve this issue. Proper planning and Governance will definitely solve this issue one day.</p>
 
-        <h2 id="">See aslo</h2>
+        <h2 id="sec45">See aslo</h2>
         <hr>
         <div class="card">
             <div>
-                <img src="images/Assam-border.jpg" class="thumb">
+                <img class="lazyload" data-src="images/Assam-border.jpg" class="thumb">
             </div>
             <div>
                 <h3>Illegal Immigration in Assam</h3>
@@ -612,109 +611,148 @@
 
     </div>
     <div class="info-box">
-        <h4 id="sec1">REFERENCES</h4>
+        <h4 id="sec46">REFERENCES</h4>
         <hr>
         <ol>
             <li><a href="https://labour.gov.in/annual-reports">Annual Employment-Unemployment Survey</a></li>
             <li><a href="https://unemploymentinindia.cmie.com/">CMIE Unemployment website</a></li>
             <li><a href="https://mhrd.gov.in/sites/upload_files/mhrd/files/statistics/AISHE2011-12P_1.pdf">All India Survey on Higher Education</a></li>
             <li><a href="https://des.assam.gov.in/information-services/economic-survey-assam">Economic Survey of Assam - Directorate of Economics and Statistics</a></li>
-            <li><a href="http://www.sezindia.nic.in/writereaddata/pdf/ListofoperationalSEZs.pdf">List of Operational SEZ in India-Source-SEZ India, Government of India</a></li>
             <li><a href="https://www.censusindia.gov.in/2011census/PCA/A-2_Data_Tables/00%20A%202-India.pdf">Census of India - 2011</a></li> 
         </ol>
     </div>
     <div class="info-box name-grp">
-        <h4 id="sec1">OUR TEAM</h4>
+        <h4 id="sec47">OUR TEAM</h4>
         <hr>
         <div class="box-grid">
             <div>
-                <h4 id="sec1">Group 1</h4>
+                <h4>Group A</h4>
                 <p class="topic"><i><b>Topic</b>: Illegal immigration</i></p>
-                <p>Mohsin Ali</p>
+                <p>Manash Kar</p>
                 <h5>Team Member</h5>
-                <p>Mohsin Ali</p>
+                <p>Manas Pratim Dutta</p>
                 <h5>Team Member</h5>
-                <p>Mohsin Ali</p>
+                <p>Nipam Ranjan Baishya</p>
                 <h5>Team Member</h5>
-                <p>Mohsin Ali</p>
+                <p>Pallav Kashyap</p>
+                <h5>Team Member</h5>
+                <p>Pritam Dutta</p>
                 <h5>Team Member</h5>
             </div>
             <div>
-                <h4 id="sec1">Group 2</h4>
+                <h4>Group B</h4>
                 <p class="topic"><i><b>Topic</b>: Unemployment in Assam</i></p>
-                <p>Mohsin Ali</p>
+                <p>Madhurjya Malakar</p>
                 <h5>Team Member</h5>
                 <p>Mohsin Ali</p>
                 <h5>Team Member</h5>
-                <p>Mohsin Ali</p>
+                <p>Nitu Alam</p>
                 <h5>Team Member</h5>
-                <p>Mohsin Ali</p>
-                <h5>Team Member</h5>
-                <p>Mohsin Ali</p>
+                <p>Nitul Das</p>
                 <h5>Team Member</h5>
             </div>
         </div>  
         <div>
-            <p>Mohsin Ali</p>
-            <h5>Team Member</h5>
+            <p>Mrs. Manjula Kalita</p>
+            <h5>Team Incharge</h5>
         </div>
         
     </div>
-    <!-- <a href="javascript:" id="return-to-top" class="btn btn-secondary">
-        <i class="fa fa-angle-up"></i>
-      </a> -->
     <div class="ct-scroll">
         <div class="cont-table" id="sideBar">
             <div class="table-menu">
                 <button id="clear" href="#" onclick="sideBar()" class="close">Close</button>
+                <button id="clear2" href="#" onclick="sideBar()" class="close"><i class="icon-tc ic-close-w"></i></button>
                 <h4><div class="bullet"></div><a href="#sec1" onclick="sideBar()">INTRODUCTION</a></h4>
-                <h2><div class="bullet"></div><a href="#sec2">Assam: A brief introduction</a></h2>
-                <h3><div class="bullet"></div><a href="#sec3">Demographics</a></h3>
-                <h2><div class="bullet"></div><a href="#sec4">Unemployment in Assam: Overview</a></h2>
-                <h2><div class="bullet"></div><a href="#sec5">Current scenario of employment market in Assam</a></h2>
-                <h2><div class="bullet"></div><a href="#sec6">Causes of unemployment</a></h2>
-                <h3><div class="bullet"></div><a href="#sec7">Caste System</a></h3>
-                <h3><div class="bullet"></div><a href="#sec8">Slow Economic Growth</a></h3>
-                <h3><div class="bullet"></div><a href="#sec9">Lack of skills</a></h3>
-                <h3><div class="bullet"></div><a href="#sec10">Immobility of labor</a></h3>
-                <h2><div class="bullet"></div><a href="#sec11">Solutions</a></h2>
-                <h3><div class="bullet"></div><a href="#sec12">Tax reduction</a></h3>
-                <h3><div class="bullet"></div><a href="#sec13">Skill development</a></h3>
-                <h3><div class="bullet"></div><a href="#sec14">Educations</a></h3>
-                </div>
+                <h2><div class="bullet"></div><a href="#sec2" onclick="sideBar()">What is Unemployment?</a></h2>
+                <h3><div class="bullet"></div><a href="#sec3" onclick="sideBar()">Types of Unemployment</a></h3>
+                <h3><div class="bullet"></div><a href="#sec4" onclick="sideBar()">Effects of unemployment</a></h3>
+                <h3><div class="bullet"></div><a href="#sec5" onclick="sideBar()">Why is it important to solve unemployment issue?</a></h3>
+                <h2><div class="bullet"></div><a href="#sec6" onclick="sideBar()">Assam: A brief introduction</a></h2>
+                <h3><div class="bullet"></div><a href="#sec7" onclick="sideBar()">Demographics</a></h3>
+                <h3><div class="bullet"></div><a href="#sec8" onclick="sideBar()">Lliteracy</a></h3>
+                <h3><div class="bullet"></div><a href="#sec9" onclick="sideBar()">Education</a></h3>
+                <h3><div class="bullet"></div><a href="#sec10" onclick="sideBar()">Economy</a></h3>
+                <h2><div class="bullet"></div><a href="#sec11" onclick="sideBar()">The employment market in Assam</a></h2>
+                <h3><div class="bullet"></div><a href="#sec12" onclick="sideBar()">Labour Force Participation Rate</a></h3>
+                <h2><div class="bullet"></div><a href="#sec13" onclick="sideBar()">Unemployment in Assam: Overview</a></h2>
+                <h3><div class="bullet"></div><a href="#sec14" onclick="sideBar()">Current scenario</a></h3>
+                <h2><div class="bullet"></div><a href="#sec15" onclick="sideBar()">Causes of Unemployment in Assam</a></h2>
+                <h3><div class="bullet"></div><a href="#sec16" onclick="sideBar()">lack of Skills</a></h3>
+                <h3><div class="bullet"></div><a href="#sec17" onclick="sideBar()">Immigration</a></h3>
+                <h3><div class="bullet"></div><a href="#sec18" onclick="sideBar()">Population growth</a></h3>
+                <h3><div class="bullet"></div><a href="#sec19" onclick="sideBar()">lack of adequate fund-allocation</a></h3>
+                <h3><div class="bullet"></div><a href="#sec20" onclick="sideBar()">Role of Government</a></h3>
+                <h3><div class="bullet"></div><a href="#sec21" onclick="sideBar()">Slow rate of economic growth</a></h3>
+                <h2><div class="bullet"></div><a href="#sec22" onclick="sideBar()">Suggestions to Solve Unemployment Problem</a></h2>
+                <h3><div class="bullet"></div><a href="#sec23" onclick="sideBar()">Change in education system</a></h3>
+                <h3><div class="bullet"></div><a href="#sec24" onclick="sideBar()">Policy regarding seasonal unemployment</a></h3>
+                <h3><div class="bullet"></div><a href="#sec25" onclick="sideBar()">Change in industrial technique</a></h3>
+                <h3><div class="bullet"></div><a href="#sec26" onclick="sideBar()">Expansion of Employment exchanges</a></h3>
+                <h3><div class="bullet"></div><a href="#sec27" onclick="sideBar()">Setting up skill development center</a></h3>
+                <h3><div class="bullet"></div><a href="#sec28" onclick="sideBar()">More assistance to self employed people</a></h3>
+                <h3><div class="bullet"></div><a href="#sec29" onclick="sideBar()">Full and more productive employment</a></h3>
+                <h3><div class="bullet"></div><a href="#sec30" onclick="sideBar()">Increase in Production</a></h3>
+                <h3><div class="bullet"></div><a href="#sec31" onclick="sideBar()">High rate of capital formation</a></h3>
+                <h3><div class="bullet"></div><a href="#sec32" onclick="sideBar()">Industries in co-operative sector</a></h3>
+                <h3><div class="bullet"></div><a href="#sec33" onclick="sideBar()">Encouraging start-ups</a></h3>
+                <h3><div class="bullet"></div><a href="#sec34" onclick="sideBar()">Decentralisation of industrial activity</a></h3>
+                <h3><div class="bullet"></div><a href="#sec35" onclick="sideBar()">Population control</a></h3>
+                <h3><div class="bullet"></div><a href="#sec36" onclick="sideBar()">Designate tax free zones</a></h3>
+                <h2><div class="bullet"></div><a href="#sec37" onclick="sideBar()">Our solutions to counter unemployment</a></h2>
+                <h3><div class="bullet"></div><a href="#sec38" onclick="sideBar()">Roadmap</a></h3>
+                <h3><div class="bullet"></div><a href="#sec39" onclick="sideBar()">Planning and execution strategy </a></h3>
+                <h3><div class="bullet"></div><a href="#sec40" onclick="sideBar()">Efficiency of our plan</a></h3>
+                <h3><div class="bullet"></div><a href="#sec41" onclick="sideBar()">Are our solutions Unique?</a></h3>
+                <h3><div class="bullet"></div><a href="#sec42" onclick="sideBar()">Impact on environment</a></h3>
+                <h3><div class="bullet"></div><a href="#sec43" onclick="sideBar()">Impact on society</a></h3>
+                <h3><div class="bullet"></div><a href="#sec45" onclick="sideBar()">Future Goals</a></h3>
+                <h2><div class="bullet"></div><a href="#sec44" onclick="sideBar()">See also</a></h2>
+                <h4><div class="bullet"></div><a href="#sec46" onclick="sideBar()">REFERENCES</a></h4>
+                <h4><div class="bullet"></div><a href="#sec47" onclick="sideBar()">OUR TEAM</a></h4>
+            </div>
         </div>
     </div>
     <div class="footer">
         <p><b>Girijananda Chaudhary Institue of Management and Technology</b><br>Hathkhowapara, Guwahati</p>
         <p>Branch: Computer Science and Engineering</p>
-        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+        <p>Summer training project - 2020</p>
     </div>
     <script type="text/javascript">
-        // var element = document.getElementsByClassName("float-grp");
-        function sideBar() {
-        var x = document.getElementById("sideBar");
-        var y = document.getElementById("clear");        
-        if (x.style.opacity === "0") {
-            x.style.left = "0";
-            x.style.opacity = "1";
-            
-        } else {
-            x.style.left = "-100vw";
-            x.style.opacity = "0";
-        }        
-        if (y.style.left === "-5em") {
-            y.style.left = "34vw";
-            } else {
-                y.style.left = "-5em";
-            }
+        // function sideBar() {
+        // var w = document.getElementById("clear2");
+        // var x = document.getElementById("sideBar");
+        // var y = document.getElementById("clear");        
+        // if (x.style.opacity === "0") {
+        //     x.style.left = "0";
+        //     x.style.opacity = "1"; 
+        // } else {
+        //     x.style.left = "-100vw";
+        //     x.style.opacity = "0";
+        // }        
+        // if (y.style.left === "-5em") {
+        //     y.style.left = "34vw";
+        //     } else {
+        //         y.style.left = "-5em";
+        //     }
+        
+        // if (w.style.left === "-10vw") {
+        //     w.style.left = "70vw";
+        //     } else {
+        //         w.style.left = "-10vw";
+        //     }
+        // }
 
-        }
- 
-
-
-            var z = document.getElementById("fbtn");
-            var w = document.getElementById("nav");
-            var v = document.getElementById("sticky");
+        $("#ctButton, #clear, #clear2, .table-menu a").click(function(){
+                $("#sideBar").toggleClass("sidebar-show");
+                $("#clear").toggleClass("c-btn-show");
+                $("#clear2").toggleClass("x-btn-show");
+            });
+  
+        
+        var z = document.getElementById("fbtn");
+        var w = document.getElementById("nav");
+        var v = document.getElementById("sticky");
             $(window).scroll(function() {
                 if($(this).scrollTop() > 1100) { 
                     z.style.right = "1em";
@@ -733,119 +771,120 @@
                     v.style.bottom = "-10em"
                 }
             });
-        
-            var ctx = document.getElementById('chart1').getContext('2d');
-            var chart1 = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                    labels: ['1911', '1921', '1931', '1941', '1951', '1961', '1971', '1981', '1991', '2001', '2011'],
-                    datasets: [{
-                        label: 'Population Growth',
-                        data: [17, 20.5, 19.9, 20.4, 19.9, 35, 35, 23.4, 24.2, 18.9, 17.1],
-                        backgroundColor: 'rgba(255, 99, 71, 0.384)',
-                        borderColor: 'rgba(255, 99, 71, 0.89)'
+
+            $(".dropdown-btn, #navMenu, #close").click(function(){
+                $(".dropdown").toggleClass("dropdown-show");
+                });
+            $(".dropdown-btn").click(function(){
+                $("#rotIcon").toggleClass("rotate");
+            });
+
+        var ctx = document.getElementById('chart1').getContext('2d');
+        var chart1 = new Chart(ctx, {
+                type: 'line',
+                data: {
+                labels: ['1911', '1921', '1931', '1941', '1951', '1961', '1971', '1981', '1991', '2001', '2011'],
+                datasets: [{
+                    label: 'Population Growth',
+                    data: [17, 20.5, 19.9, 20.4, 19.9, 35, 35, 23.4, 24.2, 18.9, 17.1],
+                    backgroundColor: 'rgba(255, 99, 71, 0.384)',
+                    borderColor: 'rgba(255, 99, 71, 0.89)'
                     }]
                 },
                 options: {
-                            plugins: {
-                                deferred: {
-                                    xOffset: 150,   // defer until 150px of the canvas width are inside the viewport
-                                    yOffset: '90%', // defer until 50% of the canvas height are inside the viewport
-                                    delay: 100      // delay of 500 ms after the canvas is considered inside the viewport
-                                    }
+                    plugins: {
+                        deferred: {
+                                xOffset: 150, 
+                                yOffset: '90%',
+                                delay: 100 
                                 }
+                            }
                         }
-
                 });
-                var ctx = document.getElementById('chart3').getContext('2d');
-                var chart3 = new Chart(ctx, {
-                        type: 'doughnut',
-                        data: {
-                                labels: ['Cultivators', 'Agr. Labourers', 'HHI', 'Other Workers'],
-                                datasets: [{
-                                    data: [51, 12, 1, 36],
-                                    backgroundColor: ['rgb(7, 175, 105)', 'rgb(7, 175, 175)', 'rgb(108, 7, 175)', 'rgb(248, 66, 66)']
-                                }]
-                            },
+        var ctx = document.getElementById('chart3').getContext('2d');
+        var chart3 = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Cultivators', 'Agr. Labourers', 'HHI', 'Other Workers'],
+                        datasets: [{
+                            data: [51, 12, 1, 36],
+                            backgroundColor: ['rgb(7, 175, 105)', 'rgb(7, 175, 175)', 'rgb(108, 7, 175)', 'rgb(248, 66, 66)']
+                            }]
+                        },
                         options: {
                             plugins: {
                                 deferred: {
-                                    xOffset: 150,   // defer until 150px of the canvas width are inside the viewport
-                                    yOffset: '70%', // defer until 50% of the canvas height are inside the viewport
-                                    delay: 100      // delay of 500 ms after the canvas is considered inside the viewport
-                                    }
+                                    xOffset: 150,  
+                                    yOffset: '70%',
+                                    delay: 100      
                                 }
+                            }
                         }
                     });
-                var ctx = document.getElementById('chart4').getContext('2d');
-                var chart4 = new Chart(ctx, {
-                        type: 'doughnut',
-                        data: {
-                                labels: ['Cultivators', 'Agr. Labourers', 'HHI', 'Other Workers'],
-                                datasets: [{
-                                    data: [38, 9, 2, 51],
-                                    backgroundColor: ['rgb(7, 175, 105)', 'rgb(7, 175, 175)', 'rgb(108, 7, 175)', 'rgb(248, 66, 66)']
-                                }]
-                            },
-                        options: {
-                            plugins: {
-                                deferred: {
-                                    xOffset: 150,   // defer until 150px of the canvas width are inside the viewport
-                                    yOffset: '70%', // defer until 50% of the canvas height are inside the viewport
-                                    delay: 100      // delay of 500 ms after the canvas is considered inside the viewport
-                                    }
+        var ctx = document.getElementById('chart4').getContext('2d');
+        var chart4 = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Cultivators', 'Agr. Labourers', 'HHI', 'Other Workers'],
+                    datasets: [{
+                            data: [38, 9, 2, 51],
+                            backgroundColor: ['rgb(7, 175, 105)', 'rgb(7, 175, 175)', 'rgb(108, 7, 175)', 'rgb(248, 66, 66)']
+                            }]
+                        },
+                    options: {
+                        plugins: {
+                            deferred: {
+                                xOffset: 150,   
+                                yOffset: '70%', 
+                                delay: 100      
                                 }
+                            }
                         }
                     });
-                var ctx = document.getElementById('chart5').getContext('2d');
-                var chart5 = new Chart(ctx, {
-                        type: 'doughnut',
-                        data: {
-                                labels: ['Cultivators', 'Agr. Labourers', 'HHI', 'Other Workers'],
-                                datasets: [{
-                                    data: [36, 10, 3, 51],
-                                    backgroundColor: ['rgb(7, 175, 105)', 'rgb(7, 175, 175)', 'rgb(108, 7, 175)', 'rgb(248, 66, 66)']
-                                }]
-                            },
-                        options: {
-                            plugins: {
-                                deferred: {
-                                    xOffset: 150,   // defer until 150px of the canvas width are inside the viewport
-                                    yOffset: '70%', // defer until 50% of the canvas height are inside the viewport
-                                    delay: 100      // delay of 500 ms after the canvas is considered inside the viewport
-                                    }
+        var ctx = document.getElementById('chart5').getContext('2d');
+        var chart5 = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Cultivators', 'Agr. Labourers', 'HHI', 'Other Workers'],
+                    datasets: [{
+                        data: [36, 10, 3, 51],
+                        backgroundColor: ['rgb(7, 175, 105)', 'rgb(7, 175, 175)', 'rgb(108, 7, 175)', 'rgb(248, 66, 66)']
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            deferred: {
+                                xOffset: 150, 
+                                yOffset: '70%',
+                                delay: 100     
                                 }
+                            }
                         }
                     });
 
-                    var ctx = document.getElementById('chart2');
-                    var chart2 = new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            datasets: [{
-                                label: '1991',
-                                data: [31, 5, 64],
-                                backgroundColor: 'rgba(241, 0, 0, 0.534)',
-                                borderColor: 'rgb(241, 0, 0)',
-                                borderWidth: 1
-                            }, {
-                                label: '2001',
-                                data: [27, 9, 64],
-                                backgroundColor: 'rgba(0, 125, 241, 0.541)',
-                                borderColor: 'rgb(0, 125, 241)',
-                                borderWidth: 1
-                                // Changes this dataset to become a line
-                                // type: 'line'
-                            },
-                            {
-                                label: '2011',
-                                data: [28, 10, 62],
-                                backgroundColor: 'rgba(92, 0, 241, 0.541)',
-                                borderColor: 'rgb(92, 0, 241)',
-                                borderWidth: 1
-                                // Changes this dataset to become a line
-                                // type: 'line'
-                            }],
+        var ctx = document.getElementById('chart2');
+        var chart2 = new Chart(ctx, {
+            type: 'bar',
+                data: {
+                    datasets: [{
+                        label: '1991',
+                        data: [31, 5, 64],
+                        backgroundColor: 'rgba(241, 0, 0, 0.534)',
+                        borderColor: 'rgb(241, 0, 0)',
+                        borderWidth: 1
+                        }, {
+                        label: '2001',
+                        data: [27, 9, 64],
+                        backgroundColor: 'rgba(0, 125, 241, 0.541)',
+                        borderColor: 'rgb(0, 125, 241)',
+                        borderWidth: 1
+                        }, {
+                        label: '2011',
+                        data: [28, 10, 62],
+                        backgroundColor: 'rgba(92, 0, 241, 0.541)',
+                        borderColor: 'rgb(92, 0, 241)',
+                        borderWidth: 1
+                        }],
                             labels: ['Main workers', 'Marginal workers', 'Non-workers'],
                         },
                         options: {
@@ -858,84 +897,71 @@
                             },
                             plugins: {
                                 deferred: {
-                                    xOffset: 150,   // defer until 150px of the canvas width are inside the viewport
-                                    yOffset: '70%', // defer until 50% of the canvas height are inside the viewport
-                                    delay: 100      // delay of 500 ms after the canvas is considered inside the viewport
+                                    xOffset: 150,  
+                                    yOffset: '70%',
+                                    delay: 100   
                                     }
                                 }
                         }
                     });
-                    var ctx = document.getElementById('chart6');
-                    var chart6 = new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            datasets: [{
-                                label: 'Public',
-                                data: [527, 527, 532, 531, 537, 536, 529, 515, 492, 583],
-                                backgroundColor: 'rgba(241, 0, 0, 0.534)',
-                                borderColor: 'rgb(241, 0, 0)',
-                                borderWidth: 1
-                            },
-                            {
-                                label: 'Private',
-                                data: [641, 555, 572, 583, 584, 585, 610, 591, 674, 966],
-                                backgroundColor: 'rgba(92, 0, 241, 0.541)',
-                                borderColor: 'rgb(92, 0, 241)',
-                                borderWidth: 1
-                            }],
-                            labels: ['2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016'],
-                        },
-                        options: {
-                            scales: {
-                                yAxes: [{
-                                    ticks: {
-                                        beginAtZero: true
-                                    }
-                                }]
-                            },
-                            plugins: {
-                                deferred: {
-                                    xOffset: 150,   // defer until 150px of the canvas width are inside the viewport
-                                    yOffset: '100%', // defer until 50% of the canvas height are inside the viewport
-                                    delay: 200      // delay of 500 ms after the canvas is considered inside the viewport
-                                    }
-                                }
+        var ctx = document.getElementById('chart6');
+        var chart6 = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                datasets: [{
+                    label: 'Public',
+                    data: [527, 527, 532, 531, 537, 536, 529, 515, 492, 583],
+                    backgroundColor: 'rgba(241, 0, 0, 0.534)',
+                    borderColor: 'rgb(241, 0, 0)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Private',
+                    data: [641, 555, 572, 583, 584, 585, 610, 591, 674, 966],
+                    backgroundColor: 'rgba(92, 0, 241, 0.541)',
+                    borderColor: 'rgb(92, 0, 241)',
+                    borderWidth: 1
+                }],
+                labels: ['2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016'],
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
                         }
-                    });
-
-                    var ctx = document.getElementById('chart7').getContext('2d');
-                    var chart7 = new Chart(ctx, {
-                            type: 'line',
-                            data: {
-                            labels: ['jan, 2016', 'Feb, 2016', 'Mar, 2016', 'Apr, 2016', 'May, 2016', 'Jun, 2016', 'Jul, 2016', 'Aug, 2016', 'Sept, 2016', 'Oct, 2016', 'Nov, 2016', 'Dec 2016', 'jan, 2017', 'Feb, 2017', 'Mar, 2017', 'Apr, 2017', 'May, 2017', 'Jun, 2017', 'Jul, 2017', 'Aug, 2017', 'Sept, 2017', 'Oct, 2017', 'Nov, 2017', 'Dec 2017', 'jan, 2018', 'Feb, 2018', 'Mar, 2018', 'Apr, 2018', 'May, 2018', 'Jun, 2018', 'Jul, 2018', 'Aug, 2018', 'Sept, 2018', 'Oct, 2018', 'Nov, 2018', 'Dec 2018', 'jan, 2019', 'Feb, 2019', 'Mar, 2019', 'Apr, 2019', 'May, 2019', 'Jun, 2019', 'Jul, 2019', 'Aug, 2019', 'Sept, 2019', 'Oct, 2019', 'Nov, 2019', 'Dec 2019', 'jan, 2020', 'Feb, 2020', 'Mar, 2020', 'Apr, 2020', 'May, 2020'],
-                            datasets: [{
-                                label: 'Unemployment Rate',
-                                data: [5.9, 12.7, 4.3, 0.7, 3.8, 10.2, 13, 8.3, 8.3, 7.6, 10.4, 3.9, 8, 6.8, 7.1, 2, 12.8, 10.9, 8.6, 4.8, 8.7, 10, 10.3, 7, 7.4, 9.8, 5.8, 3.6, 6.3, 8.6, 7.8, 3.9, 11.2, 5.3, 8.2, 6.1, 5.1, 5.4, 6.8, 5, 4.8, 5.9, 4.1, 6.5, 5.1, 5.8, 4.9, 0.9, 4.7, 4.4, 4.8, 11.1, 9.6],
-                                backgroundColor: 'rgba(255, 99, 71, 0.384)',
-                                borderColor: 'rgba(255, 99, 71, 0.89)'
-                            }]
+                    }]
+                },
+                plugins: {
+                    deferred: {
+                        xOffset: 150,  
+                        yOffset: '100%',
+                        delay: 200    
+                    }
+                }
+            }
+        });
+        var ctx = document.getElementById('chart7').getContext('2d');
+        var chart7 = new Chart(ctx, {
+                type: 'line',
+                data: {
+                labels: ['jan, 2016', 'Feb, 2016', 'Mar, 2016', 'Apr, 2016', 'May, 2016', 'Jun, 2016', 'Jul, 2016', 'Aug, 2016', 'Sept, 2016', 'Oct, 2016', 'Nov, 2016', 'Dec 2016', 'jan, 2017', 'Feb, 2017', 'Mar, 2017', 'Apr, 2017', 'May, 2017', 'Jun, 2017', 'Jul, 2017', 'Aug, 2017', 'Sept, 2017', 'Oct, 2017', 'Nov, 2017', 'Dec 2017', 'jan, 2018', 'Feb, 2018', 'Mar, 2018', 'Apr, 2018', 'May, 2018', 'Jun, 2018', 'Jul, 2018', 'Aug, 2018', 'Sept, 2018', 'Oct, 2018', 'Nov, 2018', 'Dec 2018', 'jan, 2019', 'Feb, 2019', 'Mar, 2019', 'Apr, 2019', 'May, 2019', 'Jun, 2019', 'Jul, 2019', 'Aug, 2019', 'Sept, 2019', 'Oct, 2019', 'Nov, 2019', 'Dec 2019', 'jan, 2020', 'Feb, 2020', 'Mar, 2020', 'Apr, 2020', 'May, 2020'],
+                datasets: [{
+                    label: 'Unemployment Rate',
+                    data: [5.9, 12.7, 4.3, 0.7, 3.8, 10.2, 13, 8.3, 8.3, 7.6, 10.4, 3.9, 8, 6.8, 7.1, 2, 12.8, 10.9, 8.6, 4.8, 8.7, 10, 10.3, 7, 7.4, 9.8, 5.8, 3.6, 6.3, 8.6, 7.8, 3.9, 11.2, 5.3, 8.2, 6.1, 5.1, 5.4, 6.8, 5, 4.8, 5.9, 4.1, 6.5, 5.1, 5.8, 4.9, 0.9, 4.7, 4.4, 4.8, 11.1, 9.6],
+                    backgroundColor: 'rgba(255, 99, 71, 0.384)',
+                    borderColor: 'rgba(255, 99, 71, 0.89)'
+                    }]
+                },
+                plugins: {
+                    deferred: {
+                        xOffset: 150,   
+                        yOffset: '100%', 
+                        delay: 200  
                         }
-                        });
-                        function myFunction() {
-                        document.getElementById("myDropdown").classList.toggle("show");
-                        }
-
-                        // Close the dropdown if the user clicks outside of it
-                        window.onclick = function(event) {
-                        if (!event.target.matches('.dropbtn')) {
-                            var dropdowns = document.getElementsByClassName("dropdown-content");
-                            var i;
-                            for (i = 0; i < dropdowns.length; i++) {
-                            var openDropdown = dropdowns[i];
-                            if (openDropdown.classList.contains('show')) {
-                                openDropdown.classList.remove('show');
-                            }
-                            }
-                        }
-                        }
-        const observer = lozad();
-        observer.observe();
-
+                    }
+            });
+            $("img.lazyload").lazyload(); 
     </script>
 </body>
 </html>
