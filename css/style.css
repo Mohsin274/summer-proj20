@@ -3,9 +3,7 @@ html {
 }
 body{
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    /* overflow-x: hidden; */
-    
+    margin: 0;    
 }
 .nav {
     padding: 0 4em;
@@ -25,10 +23,12 @@ body{
     display: inline-block;
     vertical-align: middle;
 }
+.nav .dropdown p {
+    font-weight: normal;
+}
 .nav button {
     vertical-align: middle;
     margin: 1em;
-    /* display: inline; */
 }
 .nav button:nth-child(3) {
     float: right;
@@ -38,30 +38,57 @@ body{
 .nav .dropdown-btn {
     background-color: transparent;
     color: black;
-
 }
 
 .dropdown {
     width: 30vw;
-    padding: 2vw;
+    height: 80vh;
+    padding: 1vw;
     background-color: #ffffff;
     position: fixed;
-    top: -30em;
+    top: -100vw;
+    margin: 5vw;
     right: 7vw;
     opacity: 0;
     position: fixed;
     z-index: 200;
     border-radius: 2vw;
     transition: 0.5s;
+    overflow-y: scroll;
+    scrollbar-width: none;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.411);
+}
+.dropdown-show {
+    top: 0;
+    opacity: 1;
 }
 .dropdown div {
     padding: 2vw;
     
 }
-
+.dropdown img {
+    border-radius: 1vw;
+}
+.dropdown hr {
+    margin: 1vh auto;
+}
+.dropdown h3, .dropdown p {
+    margin: 1vh;
+}
+.dropdown p {
+    font-size: inherit;
+}
+.dropdown .int-btn {
+    display: block;
+}
+.dropdown .close {
+    display: none;
+}
 .nav-btn-grp {
     float: right;
+}
+.rotate {
+    transform: rotate(180deg);
 }
 .cover {
     width: 100%;
@@ -71,9 +98,7 @@ body{
     background-image: url('bg-pattern.png');
     background-size: 30%;
     background-color: #180328;
-    /* background-position-y: -12em; */
     background-attachment: fixed;
-    /* background-size: cover; */
     box-sizing: border-box;
     text-align: center;
     color: white;
@@ -122,14 +147,13 @@ body{
 .info-box {
     margin: 4em auto;
 }
-/* button, button:hover, button:active, button:focus {
-    outline: none;
-} */
+
 .float-btn {
     position: absolute;
     right: 1em;
     bottom: 1em;
 }
+
 .close {
     padding: 0.5em 0.8em;
     background-color: burlywood;
@@ -153,7 +177,7 @@ body{
 .int-btn, .float-btn, .close {
     background-image: linear-gradient(-45deg, #e22047 0%, #ff6347 100%);
 }
-.int-btn, .dropdown-btn {
+.int-btn, .dropdown-btn, .dropdown .int-btn {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: white;
@@ -186,7 +210,6 @@ hr {
     margin-top: 2em;
 }
 .img-grp {
-    /* width: 30%; */
     border-radius: 0;
 }
 
@@ -220,7 +243,6 @@ hr {
 }
 .t-head {
     text-align: center;
-    /* font-size: 1.4em; */
 }
 .main h2, .main h3 {
     font-family: 'DM Serif Display', serif;
@@ -250,19 +272,13 @@ hr {
     padding-left: 0.6em;
     line-height: 2em;
 }
-/* #sideBar {
-
-} */
 .main ul {
     list-style: none;
   }
-/* .main ul li::after {
-    padding-top: 2em;
-} */
+
 .main ul li::before {
     content: "\2B24";
     color: rgb(34, 180, 156);
-    /* font-weight: bold; */
     display: inline-block; 
     width: 2vw;
     margin-top: 0;
@@ -281,28 +297,12 @@ hr {
 .main table tr:nth-child(odd) {
     background-color: #e1e1e1;
 }
-/* .main table tr:first-child {
-    background-color: #fff0;
 
-} */
 .main table tr:first-child td, .cm-table tr:nth-child(2) td{
     background-color: #b3b3b3;
     padding: 0.7em;
-    /* border-radius: 1em; */
     text-align: center;
 }
-/* .main table tr:first-child td:first-child {
-    border-top-left-radius: 0.6em;
-}
-.main table tr:first-child td:last-child {
-    border-top-right-radius: 0.6em;
-}
-.main table tr:last-child td:first-child {
-    border-bottom-left-radius: 0.6em;
-}
-.main table tr:last-child td:last-child {
-    border-bottom-right-radius: 0.6em;
-} */
 .main table tr td {
     padding: 0.5em;
 }
@@ -313,13 +313,6 @@ hr {
     background-color: #ffd9d4;
     transition: 0.3s;
 }
-/* .main table tr:last-child td:first-child {
-    border-radius: 1em;
-}
-
-.main table tr:last-child td:last-child {
-    border-bottom-right-radius: 10px;
-} */
 .sticky-btn {
     position: fixed;
     bottom: -10em;
@@ -345,13 +338,17 @@ hr {
     scrollbar-width: none;
     transition: 0.3s;
     width: 30em;
-    /* left: auto;
-    opacity: 0; */
+    opacity: 0;
     padding: 0 2em;
     background-color: #f0f0f0;
     left: -100vw;
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.411);
 }
+.sidebar-show {
+    left: 0;
+    opacity: 1;
+}
+
 body a{
     text-decoration: none;
     color: black;
@@ -359,11 +356,10 @@ body a{
 .table-menu {
     border-left: 0.4em solid #aeaeae;
     padding: 2em 0 2em 2em;
-    /* height: 100%; */
-    display: block;
-	/* position: relative;
-	overflow-y: scroll; */
-    
+    display: block;   
+}
+.table-menu .close:nth-child(2) {
+    display: none;
 }
 .cont-table h2, .cont-table h3 {
     font-family: inherit;
@@ -371,7 +367,6 @@ body a{
 .cont-table h2, .cont-table h3, .cont-table h4 {
     margin: 0;
     margin-bottom: 1.3em;
-    /* display: block; */
 }
 
 .bullet {
@@ -401,46 +396,23 @@ h4 .bullet {
     left: 1.75em;
     margin-top: 0.2em;
 }
-/* .float-grp, */
 .float-btn{
     position: fixed;
     bottom: 1em;
     right: -3.5em;
-    /* display: none; */
     transition: 0.3s;
     padding: 1em;
-    /* position: absolute; */
-    /* display: inherit; */
     border-radius: 0.5em;
     border: 0;
     width: max-content;
-    /* background-color: khaki; */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.211);
-    overflow: hidden;
-    /* transition: 0.3s; */
-    
+    overflow: hidden;   
 }
-/* .float-grp .float-btn{
-    padding: 1em;
-    position: absolute;
-    display: inherit;
-    border-radius: 0.5em;
-    border: 0;
-    width: max-content;
-    /* background-color: khaki; */
-    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.211);
-    overflow: hidden;
-    transition: 0.3s;
-}  */
-/* .float-grp .float-btn:first-child{
-    bottom: 5em;
-} */
 .float-btn .label {
     opacity: 0;
     max-width: 0;
     display: inline-block;
     transition: 0.3s;
-    /* transition-delay: -0.01s;  */
     white-space: nowrap;
 
 }
@@ -449,12 +421,6 @@ h4 .bullet {
     max-width: 150px;
     margin-right: 1em;
 }
-/* .float-grp.solid {
-    display: block;
-    opacity: 1;
-    transition: opacity 0.5s;
-} */
-
 .icon-tc {
     background-size: 100%;
     background-repeat: no-repeat;
@@ -473,11 +439,18 @@ h4 .bullet {
 .ic-up-arr-w {
     background-image: url("up-arrow-w.png");
 }
+.ic-down-arr {
+    transition: 0.3s;
+    background-image: url("down-arrow.png");
+}
 .ic-list-w {
     background-image: url("table-w.png");
 }
 .ic-menu-w {
     background-image: url("menu-w.png");
+}
+.ic-close-w {
+    background-image: url("close-w.png");
 }
 .ic-right-arr {
     background-image: url("right-arrow-b.png");
@@ -492,9 +465,6 @@ h4 .bullet {
 .info-box ol li {
     margin-bottom: 1.5em;
 }
-/* .info-box ol li a{
-    color: #180328;
-} */
 .card {
     display: grid;
     grid-template-columns: 30% 70%;
@@ -541,6 +511,14 @@ h4 .bullet {
     text-align: center;
     color: white;
 }
+.cont-table .c-btn-show {
+    left: 34vw;
+    opacity: 1;
+}
+.x-btn-show {
+    left: 70vw;
+    opacity: 1;
+}
 .footer a{
     color: #b369ec;
 }
@@ -555,8 +533,11 @@ h4 .bullet {
     body {
         overflow-x: hidden;
     }
+    .cover {
+        padding-top: 20vw;
+    }
     .cover img:nth-child(2) {
-        top: 10vh;
+        top: 20vh;
     }
 
     .main h2 {
@@ -565,6 +546,13 @@ h4 .bullet {
     .intro {
         padding-bottom: 5vw;
         width: 80vw;
+        top: -15vw;
+    }
+    .info-box{
+        width: 80vw;
+    }
+    .int-btn:hover{
+        box-shadow: none;
     }
     .cont-table {
         width: 75vw;
@@ -575,11 +563,43 @@ h4 .bullet {
     ol {
         margin-left: 1vw;
     }
-    .intro p, .main p, ol li, table tr td, .name-grp p{
+    .nav .dropdown h3 {
+        margin-left: 0;
+        font-size: 3em;
+    }
+    .nav .dropdown p {
+        margin-bottom: 1.5vw;
+    }
+    .dropdown hr {
+        width: 30%;
+    }
+    .dropdown img {
+        border-radius: 2vw;
+    }
+    .cover p, .intro p, .nav .dropdown p, .main p, ol li, table tr td, .name-grp p, .info-box ol li a, .main ul li, .footer p{
         font-size: 2em;
     }
     .main ul li::before {
         padding-right: 4vw;
+    }
+    .dropdown {
+        border-radius: 0;
+        width: 100vw;
+        right: 0;
+        top: 0;
+        margin: 0;
+        height: 100vh;
+        padding: 2vw;
+        box-sizing: border-box;
+    }
+    .dropdown .close {
+        display: block;
+        left: unset;
+        top: 3vw;
+        right: 3vw;
+    }
+    .table-menu {
+        height: 100vh;
     }
     .intro .btn-grp {
         display: contents;
@@ -587,6 +607,9 @@ h4 .bullet {
     .intro .int-btn {
         width: 100%;
         border-radius: 2vw;
+    }
+    .info-box ol li a, .main ol li ol li{
+        font-size: 1em;
     }
     button, a, .tab-caption, .img-caption, .img-grp .img-caption, .name-grp h5 {
         font-size: 1.8em;
@@ -597,10 +620,14 @@ h4 .bullet {
     .main h4, .intro h4, .info-box h4 {
         font-size: 2em;
     }
-    .scr-tip {
-        display: block;
+    .table-menu h1, .table-menu h2, .table-menu h3, .table-menu h4 {
+        margin-bottom: 4.5vw;
     }
-    .float-btn {
+    .table-menu .close:nth-child(2) {
+        padding: 1vw;
+    }
+    
+    .float-btn, .nav .nav-btn-grp, .table-menu .close:first-child {
         display: none;
     }
     .nav {
@@ -612,16 +639,15 @@ h4 .bullet {
         width: 60%;
         margin: 0;
     }
-    .nav button:nth-child(3) {
+    .nav button:nth-child(3), .nav .dropdown button {
         display: block;
         margin: 0;
         padding: 2vw;
     }
-    .nav .nav-btn-grp {
-        display: none;
-    }
-    .sticky-btn {
-        display: block;
+   
+
+    .sticky-btn .int-btn {
+        margin: 0 0 0 1vw;
     }
     .cover {
         padding-bottom: 30vw;
@@ -632,12 +658,10 @@ h4 .bullet {
     .btn-grp {
         display: grid;
     }
-    .card{
+ 
+    .card, .box-grid, .sticky-btn, .scr-tip, .table-menu .close:nth-child(2){
         display: block;
     }
-    .box-grid {
-        display: block;
-        }
     .box-grid div {
         margin: 0;
 
@@ -655,6 +679,9 @@ h4 .bullet {
             padding: 0;
             border-radius: 3vw;
             }
+    .footer {
+        padding-bottom: 18vw;
+    }
 }
 @media screen and (max-width : 320px)
 {   
