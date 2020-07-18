@@ -90,6 +90,7 @@ canvas{
     right: 3vw;
     left: unset;
     position: absolute;
+    display: none;
 }
 .nav-btn-grp {
     float: right;
@@ -541,8 +542,8 @@ h4 .bullet {
 :target::before {
     content: "";
     display: block;
-    height: 90vh;
-    margin: -90vh 0 0; 
+    height: 30vh;
+    margin: -30vh 0 0; 
   }
     
 @media screen and (max-width : 1050px)
@@ -672,7 +673,7 @@ h4 .bullet {
     .sticky-btn {
         display: flex;
     }
-    .card, .box-grid, .scr-tip, .table-menu .close:nth-child(2){
+    .card, .box-grid, .scr-tip, .table-menu .close:nth-child(2), .dropdown .close{
         display: block;
     }
     .box-grid div {
@@ -696,7 +697,7 @@ h4 .bullet {
     }
 
     :target::before {
-        height: 40vh;
-        margin: -40vh 0 0; 
+        height: 30vh;
+        margin: -30vh 0 0; 
       }
 }
