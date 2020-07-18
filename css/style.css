@@ -598,7 +598,7 @@ h4 .bullet {
     .dropdown img {
         border-radius: 2vw;
     }
-    .cover p, .intro p, .nav .dropdown p, .main p, ol li, table tr td, .name-grp p, .info-box ol li a, .main ul li, .footer p{
+    .cover p, .intro p, .nav .dropdown p, .main p, .main ol li, table tr td, .name-grp p, .info-box ol li a, .main ul li, .footer p{
         font-size: 32px;
         max-height: 999999px;
     }
@@ -643,6 +643,7 @@ h4 .bullet {
     }
     .main h4, .intro h4, .info-box h4 {
         font-size: 2em;
+        max-height:999999px;
     }
     .table-menu h1, .table-menu h2, .table-menu h3, .table-menu h4 {
         margin-bottom: 4.5vw;
