@@ -598,8 +598,12 @@ h4 .bullet {
     .dropdown img {
         border-radius: 2vw;
     }
-    .cover p, .intro p, .nav .dropdown p, .main p, .main ol li, .main ol li ol li, table tr td, .name-grp p, .info-box ol li a, .main ul li, .footer p{
+    .cover p, .intro p, .nav .dropdown p, .main p, table tr td, .name-grp p, .info-box ol li a, .main ul li, .footer p{
         font-size: 32px;
+        max-height: 999999px;
+    }
+    .main ol li, .main ol li ol li {
+        font-size: 1em;
         max-height: 999999px;
     }
     .main ul li::before {
