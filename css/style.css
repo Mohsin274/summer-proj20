@@ -621,11 +621,13 @@ h4 .bullet {
     }
     .intro .btn-grp {
         display: contents;
+        box-sizing: border-box;
     }
     .intro .int-btn {
         width: 100%;
         border-radius: 2vw;
         margin-left: 0; 
+        box-sizing: border-box;
     }
     .info-box ol li a, .main ol li ol li{
         font-size: 1em;
