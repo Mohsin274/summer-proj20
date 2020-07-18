@@ -86,8 +86,9 @@ canvas{
     display: block;
 }
 .dropdown .close {
-    display: none;
-    top: -3vw;
+    top: 3vw;
+    right: 3vw;
+    left: unset;
     position: absolute;
 }
 .nav-btn-grp {
@@ -329,9 +330,14 @@ hr {
     background-color: #f0f0f0de;
     transition: 0.3s;
 }
+.sticky-btn .int-btn{
+    margin: 0;
+}
 
-.sticky-btn button {
-    width: 85%;
+.sticky-btn .int-btn:nth-child(2) {
+    float: right;
+    max-width: max-content;
+    margin-left: 0.8em;
 }
 
 .cont-table {
@@ -522,7 +528,7 @@ h4 .bullet {
     opacity: 1;
 }
 .x-btn-show {
-    left: 70vw;
+    left: 73vw;
     opacity: 1;
 }
 .footer a{
@@ -532,7 +538,12 @@ h4 .bullet {
     text-decoration: underline;
 }
 
-
+:target::before {
+    content: "";
+    display: block;
+    height: 90vh;
+    margin: -90vh 0 0; 
+  }
     
 @media screen and (max-width : 1050px)
 {   
@@ -568,7 +579,7 @@ h4 .bullet {
         width: 75vw;
     }
     .table-menu {
-        height: 220%;
+        height: 290vh;
     }
     ol {
         margin-left: 1vw;
@@ -587,7 +598,7 @@ h4 .bullet {
         border-radius: 2vw;
     }
     .cover p, .intro p, .nav .dropdown p, .main p, ol li, table tr td, .name-grp p, .info-box ol li a, .main ul li, .footer p{
-        font-size: 2em;
+        font-size: 32px;
     }
     .main ul li::before {
         padding-right: 4vw;
@@ -603,14 +614,8 @@ h4 .bullet {
         box-sizing: border-box;
         box-shadow: none;
     }
-    .dropdown .close {
-        display: block;
-        left: unset;
-        top: 3vw;
-        right: 3vw;
-    }
     .table-menu {
-        height: 100vh;
+        height: 230%;
     }
     .intro .btn-grp {
         display: contents;
@@ -623,7 +628,7 @@ h4 .bullet {
         font-size: 1em;
     }
     button, a, .tab-caption, .img-caption, .img-grp .img-caption, .name-grp h5 {
-        font-size: 1.8em;
+        font-size: 28.8px;
     }
     .main h3 {
         font-size: 2.3em;
@@ -654,12 +659,7 @@ h4 .bullet {
         display: block;
         margin: 0;
         padding: 2vw;
-    }
-   
-
-    .sticky-btn .int-btn {
-        margin: 0 0 0 1vw;
-    }
+    } 
     .cover {
         padding-bottom: 30vw;
     }
@@ -669,13 +669,14 @@ h4 .bullet {
     .btn-grp {
         display: grid;
     }
- 
-    .card, .box-grid, .sticky-btn, .scr-tip, .table-menu .close:nth-child(2){
+    .sticky-btn {
+        display: flex;
+    }
+    .card, .box-grid, .scr-tip, .table-menu .close:nth-child(2){
         display: block;
     }
     .box-grid div {
         margin: 0;
-
         }
     .box-grid div:first-child {
             border-right: none;
@@ -693,10 +694,9 @@ h4 .bullet {
     .footer {
         padding-bottom: 18vw;
     }
-}
-@media screen and (max-width : 320px)
-{   
-    .nav p {
-        margin-top: 1vw;
-    }
+
+    :target::before {
+        height: 40vh;
+        margin: -40vh 0 0; 
+      }
 }
