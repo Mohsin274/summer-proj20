@@ -629,6 +629,7 @@ h4 .bullet {
     }
     .info-box ol li a, .main ol li ol li{
         font-size: 1em;
+        max-height: 999999px;
     }
     button, a, .tab-caption, .img-caption, .img-grp .img-caption, .name-grp h5 {
         font-size: 28.8px;
