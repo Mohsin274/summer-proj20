@@ -600,6 +600,7 @@ h4 .bullet {
     }
     .cover p, .intro p, .nav .dropdown p, .main p, ol li, table tr td, .name-grp p, .info-box ol li a, .main ul li, .footer p{
         font-size: 32px;
+        max-height: 999999px;
     }
     .main ul li::before {
         padding-right: 4vw;
@@ -630,6 +631,7 @@ h4 .bullet {
     }
     button, a, .tab-caption, .img-caption, .img-grp .img-caption, .name-grp h5 {
         font-size: 28.8px;
+        max-height:999999px;
     }
     .main h3 {
         font-size: 2.3em;
