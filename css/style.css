@@ -629,7 +629,7 @@ h4 .bullet {
         margin-left: 0; 
         box-sizing: border-box;
     }
-    .info-box ol li a, .main ol li ol li{
+    .main ol li, .main ol li ol li{
         font-size: 1em;
         max-height: 999999px;
     }
