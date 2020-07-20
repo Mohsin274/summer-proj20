@@ -542,9 +542,9 @@ h4 .bullet {
 :target::before {
     content: "";
     display: block;
-    height: 30vh;
-    margin: -30vh 0 0; 
-  }
+    height: 20vh;
+    margin: -20vh 0 0; 
+}
     
 @media screen and (max-width : 1050px)
 {   
@@ -701,8 +701,4 @@ h4 .bullet {
         padding-bottom: 18vw;
     }
 
-    :target::before {
-        height: 30vh;
-        margin: -30vh 0 0; 
-      }
 }
