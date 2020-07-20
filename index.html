@@ -742,28 +742,25 @@
             });
   
         
-        var z = document.getElementById("fbtn");
         var w = document.getElementById("nav");
         var v = document.getElementById("sticky");
+        var z = document.getElementById("fbtn");
             $(window).scroll(function() {
                 if($(this).scrollTop() > 1100) { 
-                    z.style.right = "1em";
-                    z.style.opacity = "1";
-                } else {
-                    z.style.right = "-3.5em";
-                    z.style.opacity = "0";
-                }
-                if($(this).scrollTop() > 1300) { 
                     w.style.top = "0"
                     w.style.opacity = "1"
                     v.style.bottom = "0"
+                    z.style.right = "1em";
+                    z.style.opacity = "1";
                 } else {
                     w.style.top = "-5em"
                     w.style.opacity = "0"
                     v.style.bottom = "-10em"
+                    z.style.right = "-3.5em";
+                    z.style.opacity = "0";
                 }
             });
-
+        
             $(document).on("click tap", ".dropdown-btn, #navMenu, #close", function(){
                 $(".dropdown").toggleClass("dropdown-show");
                 });
