@@ -617,7 +617,7 @@ h4 .bullet {
         box-shadow: none;
     }
     .table-menu {
-        height: 230%;
+        height: max-content;
     }
     .intro .btn-grp {
         display: contents;
